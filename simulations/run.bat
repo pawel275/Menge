@@ -1,0 +1,1 @@
+..\Exe\menge -p %1\sim.xml -d 9999
