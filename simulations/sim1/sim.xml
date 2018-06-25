@@ -1,9 +1,9 @@
 <?xml version="1.0"?>
 
 <Project 
-	scene="randomGoalS.xml" 
-	behavior="randomGoalB.xml" 
-	view="randomGoalV.xml" 
-	model="orca"
+	scene="S.xml" 
+	behavior="B.xml" 
+	view="V.xml" 
+	model="evacuation"
 	dumpPath="images"
 />

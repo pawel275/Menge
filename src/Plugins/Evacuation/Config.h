@@ -1,5 +1,5 @@
 /*!
- *	@file		EVACUATIONConfig.h
+ *	@file		Config.h
  *	@brief		Configures the shared library aspect of the includes.
  */
 

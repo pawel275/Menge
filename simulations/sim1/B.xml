@@ -30,7 +30,7 @@
 
 
 	<State name="Walk2" final="0" >
-		<GoalSelector type="weighted" goal_set="0" />
+		<GoalSelector type="unknown_path" goal_set="0" />
 		<VelComponent type="goal" />
 	</State>
 	<State name="Return2" final="0">

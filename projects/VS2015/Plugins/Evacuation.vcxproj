@@ -19,10 +19,16 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="..\..\..\src\Plugins\Evacuation\EvacuationConfig.h" />
+    <ClInclude Include="..\..\..\src\Plugins\Evacuation\Agent.h" />
+    <ClInclude Include="..\..\..\src\Plugins\Evacuation\Config.h" />
+    <ClInclude Include="..\..\..\src\Plugins\Evacuation\DBEntry.h" />
+    <ClInclude Include="..\..\..\src\Plugins\Evacuation\Simulator.h" />
+    <ClInclude Include="..\..\..\src\Plugins\Evacuation\UnknownPathGoalSelector.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\..\..\src\Plugins\Evacuation\Evacuation.cpp" />
+    <ClCompile Include="..\..\..\src\Plugins\Evacuation\EvacuationAgent.cpp" />
+    <ClCompile Include="..\..\..\src\Plugins\Evacuation\UnknownPathGoalSelector.cpp" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <ProjectGuid>{D7EC89BC-5194-4659-9A81-1E34CF9CF445}</ProjectGuid>

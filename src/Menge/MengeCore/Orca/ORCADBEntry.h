@@ -31,7 +31,7 @@ namespace ORCA {
 	/*!
 	 *	@brief		The simulator database entry for the ORCA simulator.
 	 */
-	class DBEntry : public Menge::SimulatorDBEntry {
+	class MENGE_API DBEntry : public Menge::SimulatorDBEntry {
 	public:
 		/*!
 		 *	@brief	Gives a brief description of the simulator.
