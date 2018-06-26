@@ -6,6 +6,7 @@
 #include "Config.h"
 #include "DBEntry.h"
 #include "UnknownPathGoalSelector.h"
+#include "GoalFactory.h"
 #include "MengeCore/PluginEngine/CorePluginEngine.h"
 
 extern "C" {
@@ -35,6 +36,7 @@ extern "C" {
 	EVACUATION_API void registerCorePlugin(Menge::PluginEngine::CorePluginEngine * engine) {
 		std::cout << "REGISTERING EVACUATION PLUGIN" << std::endl;
 		engine->registerModelDBEntry(new Evacuation::DBEntry());
+		engine->registerGoalFactory(new Evacuation::EvacuationAABBGoalFactory());
 		engine->registerGoalSelectorFactory(new Evacuation::UnknownPathGoalSelectorFactory());
 	}
 }

@@ -20,4 +20,3 @@ doc/tags
 examples/**/*.png
 
 /projects/**/*.db*
-/simulations/**

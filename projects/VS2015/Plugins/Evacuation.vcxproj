@@ -22,12 +22,14 @@
     <ClInclude Include="..\..\..\src\Plugins\Evacuation\Agent.h" />
     <ClInclude Include="..\..\..\src\Plugins\Evacuation\Config.h" />
     <ClInclude Include="..\..\..\src\Plugins\Evacuation\DBEntry.h" />
+    <ClInclude Include="..\..\..\src\Plugins\Evacuation\GoalFactory.h" />
     <ClInclude Include="..\..\..\src\Plugins\Evacuation\Simulator.h" />
     <ClInclude Include="..\..\..\src\Plugins\Evacuation\UnknownPathGoalSelector.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\..\..\src\Plugins\Evacuation\Evacuation.cpp" />
     <ClCompile Include="..\..\..\src\Plugins\Evacuation\EvacuationAgent.cpp" />
+    <ClCompile Include="..\..\..\src\Plugins\Evacuation\GoalFactory.cpp" />
     <ClCompile Include="..\..\..\src\Plugins\Evacuation\UnknownPathGoalSelector.cpp" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
