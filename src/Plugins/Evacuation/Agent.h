@@ -2,6 +2,7 @@
 #define __EVACUATION_AGENT_H__
 
 #include "MengeCore\Orca\ORCAAgent.h"
+#include "GoalFactory.h"
 #include <unordered_set>
 
 namespace Evacuation
@@ -9,6 +10,7 @@ namespace Evacuation
 	class Agent : public ORCA::Agent
 	{
 	public:
+		EvacuationAABBGoal * _lastGoal = nullptr;
 		std::unordered_set<std::string> _dead_ends;
 	};
 }

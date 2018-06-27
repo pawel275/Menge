@@ -20,3 +20,4 @@ doc/tags
 examples/**/*.png
 
 /projects/**/*.db*
+XmlGenerator/.vs/**

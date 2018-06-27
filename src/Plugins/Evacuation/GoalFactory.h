@@ -1,7 +1,6 @@
 #ifndef __EVACUATION_GOAL_FACTORY_H__
 #define __EVACUATION_GOAL_FACTORY_H__
 
-#include <unordered_set>
 #include "Config.h"
 #include "MengeCore\BFSM\Goals\GoalAABB.h"
 
@@ -18,7 +17,7 @@ namespace Evacuation
 
 		virtual std::string getStringId() const { return NAME; }
 
-		std::unordered_set<std::string> _adjacent;
+		std::vector<size_t> _adjacent;
 	};
 
 	class EVACUATION_API EvacuationAABBGoalFactory : public AABBGoalFactory

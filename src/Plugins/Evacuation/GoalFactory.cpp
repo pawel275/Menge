@@ -21,7 +21,7 @@ bool Evacuation::EvacuationAABBGoalFactory::setFromXML(Goal * goal, TiXmlElement
 	}
 
 	EvacuationAABBGoal * aabbGoal = (EvacuationAABBGoal*)goal;
-	Menge::StringAttribute adjacentAttr("adjacent", true, "");
+	Menge::StringAttribute adjacentAttr("adjacent", false, "");
 
 	if (!adjacentAttr.extract(node))
 	{
@@ -29,11 +29,12 @@ bool Evacuation::EvacuationAABBGoalFactory::setFromXML(Goal * goal, TiXmlElement
 	}
 
 	std::stringstream ss(adjacentAttr.getString());
-	while (ss.good())
+	size_t adj;
+	while (ss >> adj)
 	{
-		std::string adj;
-		std::getline(ss, adj, ',');
-		aabbGoal->_adjacent.insert(adj);
+		aabbGoal->_adjacent.push_back(adj);
+		if (ss.peek() == ',')
+			ss.ignore();
 	}
 
 	return !aabbGoal->_adjacent.empty();

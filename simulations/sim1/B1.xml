@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+
+<BFSM>
+	<GoalSet id="0">
+		<Goal type="evAABB" id="0" min_x="-1" min_y="-1" max_x="1.0" max_y="1" weight="20.0" adjacent="1,2" />
+		<Goal type="OBB" id="1" x="-1" y="5" width="2" height="2" angle="10.0" weight="1.0" adjacent="0" />
+		<Goal type="AABB" id="2" min_x="-1" min_y="-7" max_x="1" max_y="-5" weight="1.0" adjacent="0" />
+	</GoalSet>
+	<GoalSet id="1">
+		<Goal type="circle" id="0" x="-10" y="0" radius="0.5"/>
+		<Goal type="circle" id="1" x="10" y="0" radius="0.5"/>
+	</GoalSet>
+
+	<State name="Walk" final="0" >
+		<GoalSelector type="unknown_path" goal_set="0" />
+		<VelComponent type="goal" />
+	</State>
+	<State name="Return" final="0">
+		<GoalSelector type="explicit" goal_set="1" goal="1"/>
+		<VelComponent type="goal" />
+	</State>
+
+	<Transition from="Walk" to="Walk" >
+		<Condition type="goal_reached" distance="0.2" />
+	</Transition>
+	
+<!--	
+	<Transition from="Walk" to="Return" >
+		<Condition type="goal_reached" distance="0.2" />
+	</Transition>
+	<Transition from="Return" to="Walk" >
+		<Condition type="goal_reached" distance="0.2" />
+	</Transition>
+-->
+	
+</BFSM>
