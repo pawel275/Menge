@@ -43,6 +43,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BFSM\BfsmWriter.cs" />
+    <Compile Include="BFSM\GoalParser\Goal.cs" />
+    <Compile Include="BFSM\GoalParser\GoalParser.cs" />
     <Compile Include="BFSM\GoalSet.cs" />
     <Compile Include="BFSM\State.cs" />
     <Compile Include="BFSM\Transition.cs" />

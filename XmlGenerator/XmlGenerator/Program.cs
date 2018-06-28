@@ -1,4 +1,5 @@
 using XmlGenerator.BFSM;
+using XmlGenerator.BFSM.GoalParser;
 
 namespace XmlGenerator
 {
@@ -12,6 +13,8 @@ namespace XmlGenerator
                 writer.State.GoToGoal("Walk", "unknown_path", "0");
                 writer.Transition.SimpleContition("Walk", "Walk", "goal_reached");
             }
+
+            new GoalParser(@"C:\Users\prut\Downloads\maze1\path.svg");
         }
     }
 }
