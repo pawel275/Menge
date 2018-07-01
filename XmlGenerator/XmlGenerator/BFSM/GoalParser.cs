@@ -1,28 +1,41 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using System.Xml.Linq;
 
-namespace XmlGenerator.BFSM.GoalParser
+namespace XmlGenerator.BFSM
 {
     public class GoalParser
     {
+        private readonly XDocument xml;
         private List<List<Goal>> polylines;
 
         public GoalParser(string filePath)
         {
-            var xml = XDocument.Load(filePath);
+            xml = XDocument.Load(filePath);
+        }
+
+        public List<Goal> ParsePaths()
+        {
             var solution = ReadGoals(xml.Root.Elements().First(x => x.Name.LocalName == "polyline")).ToList();
             solution.RemoveAt(0);
             solution.RemoveAt(solution.Count - 1);
 
-            List<Goal> paths = InitializePaths(solution);
+            polylines = ReadPolylines(xml.Root.Elements().First(x => x.Name.LocalName == "g"));
 
-            // TODO: initialize polylines
+            List<Goal> paths = InitializePaths(solution);
 
             foreach (var path in paths)
             {
                 LookUp(path);
             }
+
+            if (polylines.Any())
+            {
+                Console.WriteLine($"Ommited paths: {polylines.Count}");
+            }
+
+            return paths;
         }
 
         private IEnumerable<Goal> ReadGoals(XElement polyline)
@@ -39,6 +52,17 @@ namespace XmlGenerator.BFSM.GoalParser
                 });
         }
 
+        private List<List<Goal>> ReadPolylines(XElement g)
+        {
+            List<List<Goal>> polylines = new List<List<Goal>>();
+            foreach (var polyline in g.Elements())
+            {
+                polylines.Add(ReadGoals(polyline).ToList());
+            }
+
+            return polylines;
+        }
+
         private List<Goal> InitializePaths(List<Goal> solution)
         {
             List<Goal> paths = new List<Goal>(2);
@@ -50,14 +74,14 @@ namespace XmlGenerator.BFSM.GoalParser
                 int oldS = s;
                 s += Goal.Dist(solution[i - 1], solution[i]);
 
-                solution[i].Next = s < halfWayLength ? solution[i - 1] : solution[i + 1];
+                solution[i].Next = s <= halfWayLength ? solution[i - 1] : solution[i + 1];
 
                 solution[i - 1].Adjacent.Add(solution[i]);
                 solution[i + 1].Adjacent.Add(solution[i]);
                 solution[i].Adjacent.Add(solution[i - 1]);
                 solution[i].Adjacent.Add(solution[i + 1]);
 
-                if (oldS < halfWayLength && s > halfWayLength) // passing half way point
+                if (oldS <= halfWayLength && s > halfWayLength) // passing half way point
                 {
                     paths.Add(solution[i - 1]);
                     paths.Add(solution[i]);
@@ -69,17 +93,13 @@ namespace XmlGenerator.BFSM.GoalParser
 
         private void Attach(List<Goal> polyline, Goal node)
         {
-            for (int i = 1; i < polyline.Count - 1; i++)
+            for (int i = 0; i < polyline.Count - 1; i++)
             {
-                polyline[i - 1].Adjacent.Add(polyline[i]);
-                polyline[i + 1].Adjacent.Add(polyline[i]);
-                polyline[i].Adjacent.Add(polyline[i - 1]);
                 polyline[i].Adjacent.Add(polyline[i + 1]);
+                polyline[i + 1].Adjacent.Add(polyline[i]);
 
                 polyline[i].Next = polyline[i + 1];
             }
-
-            polyline[0].Next = polyline[1];
 
             LookUp(polyline.First());
 
@@ -102,7 +122,7 @@ namespace XmlGenerator.BFSM.GoalParser
                 }
 
                 var nodeToAttach = current;
-                var polylinesToAttach = lastOnCurrent.Concat(firstOnCurrent);
+                var polylinesToAttach = lastOnCurrent.Concat(firstOnCurrent).ToArray();
 
                 foreach (var p in polylinesToAttach)
                 {
@@ -137,6 +157,13 @@ namespace XmlGenerator.BFSM.GoalParser
 
                     var lastNode = crossingPath.Last();
                     crossingPath.Remove(lastNode);
+
+                    lastNode.Adjacent.Add(current);
+                    lastNode.Adjacent.Add(current.Next);
+                    current.Adjacent.Remove(current.Next);
+                    current.Next.Adjacent.Remove(current);
+                    current.Adjacent.Add(lastNode);
+                    current.Next.Adjacent.Add(lastNode);
 
                     lastNode.Next = current.Next;
                     current.Next = lastNode;
