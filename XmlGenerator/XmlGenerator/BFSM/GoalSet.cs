@@ -29,7 +29,7 @@ namespace XmlGenerator.BFSM
             });
         }
 
-        public void Parsed(string filePath, string id, double size = 1)
+        public void Parsed(string filePath, string id, double size = 1, double scale = 1)
         {
             var parser = new GoalParser(filePath);
             var paths = parser.ParsePaths();
@@ -44,7 +44,8 @@ namespace XmlGenerator.BFSM
                     position: _BoxPosition(path.X, path.Y, size),
                     weight: "1.0",
                     adjacent: string.Join(",", path.Adjacent.Select(x => x.Id)),
-                    next: path.Next?.Id.ToString() ?? string.Empty);
+                    next: path.Next?.Id.ToString() ?? string.Empty,
+                    scale: scale);
                 foreach (var adj in path.Adjacent.Where(x => !writtenGoals.Contains(x.Id)))
                 {
                     writePath(adj);
@@ -73,15 +74,16 @@ namespace XmlGenerator.BFSM
             (double min_x, double min_y, double max_x, double max_y) position,
             string weight,
             string adjacent,
-            string next)
+            string next,
+            double scale = 1D)
         {
             xml.WriteStartElement("Goal");
             xml.WriteAttributeString("type", "evAABB");
             xml.WriteAttributeString("id", id.ToString());
-            xml.WriteAttributeString("min_x", Utils.Str(position.min_x));
-            xml.WriteAttributeString("min_y", Utils.Str(position.min_y));
-            xml.WriteAttributeString("max_x", Utils.Str(position.max_x));
-            xml.WriteAttributeString("max_y", Utils.Str(position.max_y));
+            xml.WriteAttributeString("min_x", Utils.Str(position.min_x * scale));
+            xml.WriteAttributeString("min_y", Utils.Str(position.min_y * scale));
+            xml.WriteAttributeString("max_x", Utils.Str(position.max_x * scale));
+            xml.WriteAttributeString("max_y", Utils.Str(position.max_y * scale));
             xml.WriteAttributeString("weight", weight);
             xml.WriteAttributeString("adjacent", adjacent);
             xml.WriteAttributeString("next", next);

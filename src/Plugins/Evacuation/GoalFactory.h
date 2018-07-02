@@ -18,6 +18,8 @@ namespace Evacuation
 		virtual std::string getStringId() const { return NAME; }
 
 		std::vector<size_t> _adjacent;
+
+		size_t _next;
 	};
 
 	class EVACUATION_API EvacuationAABBGoalFactory : public AABBGoalFactory

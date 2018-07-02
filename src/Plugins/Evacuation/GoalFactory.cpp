@@ -37,5 +37,12 @@ bool Evacuation::EvacuationAABBGoalFactory::setFromXML(Goal * goal, TiXmlElement
 			ss.ignore();
 	}
 
+	Menge::SizeTAttribute nextAttr("next", false, -1);
+
+	if (nextAttr.extract(node)) 
+	{
+		aabbGoal->_next = nextAttr.getSizeT();
+	}
+
 	return !aabbGoal->_adjacent.empty();
 }

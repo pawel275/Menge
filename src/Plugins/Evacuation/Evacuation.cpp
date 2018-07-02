@@ -6,6 +6,7 @@
 #include "Config.h"
 #include "DBEntry.h"
 #include "UnknownPathGoalSelector.h"
+#include "KnownPathGoalSelector.h"
 #include "GoalFactory.h"
 #include "MengeCore/PluginEngine/CorePluginEngine.h"
 
@@ -38,5 +39,6 @@ extern "C" {
 		engine->registerModelDBEntry(new Evacuation::DBEntry());
 		engine->registerGoalFactory(new Evacuation::EvacuationAABBGoalFactory());
 		engine->registerGoalSelectorFactory(new Evacuation::UnknownPathGoalSelectorFactory());
+		engine->registerGoalSelectorFactory(new Evacuation::KnownPathGoalSelectorFactory());
 	}
 }

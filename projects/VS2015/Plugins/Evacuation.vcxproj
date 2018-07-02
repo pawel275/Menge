@@ -23,6 +23,7 @@
     <ClInclude Include="..\..\..\src\Plugins\Evacuation\Config.h" />
     <ClInclude Include="..\..\..\src\Plugins\Evacuation\DBEntry.h" />
     <ClInclude Include="..\..\..\src\Plugins\Evacuation\GoalFactory.h" />
+    <ClInclude Include="..\..\..\src\Plugins\Evacuation\KnownPathGoalSelector.h" />
     <ClInclude Include="..\..\..\src\Plugins\Evacuation\Simulator.h" />
     <ClInclude Include="..\..\..\src\Plugins\Evacuation\UnknownPathGoalSelector.h" />
   </ItemGroup>
@@ -30,6 +31,7 @@
     <ClCompile Include="..\..\..\src\Plugins\Evacuation\Evacuation.cpp" />
     <ClCompile Include="..\..\..\src\Plugins\Evacuation\EvacuationAgent.cpp" />
     <ClCompile Include="..\..\..\src\Plugins\Evacuation\GoalFactory.cpp" />
+    <ClCompile Include="..\..\..\src\Plugins\Evacuation\KnownPathGoalSelector.cpp" />
     <ClCompile Include="..\..\..\src\Plugins\Evacuation\UnknownPathGoalSelector.cpp" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
