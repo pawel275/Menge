@@ -38,14 +38,17 @@ namespace XmlGenerator.BFSM
 
             void writePath(Goal path, Goal excluded = null)
             {
+                if (!writtenGoals.Contains(path.Id))
+                {
+                    _WriteEvAABBGoal(
+                        id: path.Id,
+                        position: _BoxPosition(path.X, path.Y, size),
+                        weight: "1.0",
+                        adjacent: string.Join(",", path.Adjacent.Select(x => x.Id)),
+                        next: path.Next?.Id.ToString() ?? string.Empty,
+                        scale: scale);
+                }
                 writtenGoals.Add(path.Id);
-                _WriteEvAABBGoal(
-                    id: path.Id,
-                    position: _BoxPosition(path.X, path.Y, size),
-                    weight: "1.0",
-                    adjacent: string.Join(",", path.Adjacent.Select(x => x.Id)),
-                    next: path.Next?.Id.ToString() ?? string.Empty,
-                    scale: scale);
                 foreach (var adj in path.Adjacent.Where(x => !writtenGoals.Contains(x.Id)))
                 {
                     writePath(adj);

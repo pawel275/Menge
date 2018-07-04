@@ -53,6 +53,11 @@
     <Compile Include="BFSM\Transition.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Scene\AgentGroup.cs" />
+    <Compile Include="Scene\AgentProfile.cs" />
+    <Compile Include="Scene\ObstacleSet.cs" />
+    <Compile Include="Scene\SceneWriter.cs" />
+    <Compile Include="Scene\WallsParser.cs" />
     <Compile Include="Utils.cs" />
     <Compile Include="Writer.cs" />
   </ItemGroup>
