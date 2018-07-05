@@ -29,7 +29,7 @@ namespace XmlGenerator.BFSM
             });
         }
 
-        public void Parsed(string filePath, string id, double size = 1, double scale = 1)
+        public void Parsed(string filePath, string id, double size = 1, double scale = 1, double dx = 0, double dy = 0)
         {
             var parser = new GoalParser(filePath);
             var paths = parser.ParsePaths();
@@ -42,7 +42,7 @@ namespace XmlGenerator.BFSM
                 {
                     _WriteEvAABBGoal(
                         id: path.Id,
-                        position: _BoxPosition(path.X, path.Y, size),
+                        position: _BoxPosition(path.X + dx, path.Y + dy, size),
                         weight: "1.0",
                         adjacent: string.Join(",", path.Adjacent.Select(x => x.Id)),
                         next: path.Next?.Id.ToString() ?? string.Empty,

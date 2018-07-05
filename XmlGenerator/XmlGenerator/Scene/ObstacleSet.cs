@@ -8,10 +8,10 @@ namespace XmlGenerator.Scene
         {
         }
 
-        public void Parsed(string filePath, string @class, double scale = 1)
+        public void Parsed(string filePath, string @class, double scale = 1, double dx = 0, double dy = 0)
         {
             var parser = new WallsParser(filePath);
-            var lines = parser.ParseLines(scale);
+            var lines = parser.ParseLines(scale, dx, dy);
 
             xml.WriteStartElement("ObstacleSet");
             xml.WriteAttributeString("type", "explicit");
