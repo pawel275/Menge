@@ -8,7 +8,9 @@
 #include "UnknownPathGoalSelector.h"
 #include "KnownPathGoalSelector.h"
 #include "GoalFactory.h"
+#include "GoalRenderer.h"
 #include "MengeCore/PluginEngine/CorePluginEngine.h"
+#include "MengeVis/PluginEngine/VisPluginEngine.h"
 
 extern "C" {
 	/*!
@@ -40,5 +42,9 @@ extern "C" {
 		engine->registerGoalFactory(new Evacuation::EvacuationAABBGoalFactory());
 		engine->registerGoalSelectorFactory(new Evacuation::UnknownPathGoalSelectorFactory());
 		engine->registerGoalSelectorFactory(new Evacuation::KnownPathGoalSelectorFactory());
+	}
+
+	EVACUATION_API void registerVisPlugin(MengeVis::PluginEngine::VisPluginEngine * engine) {
+		engine->registerGoalRenderer(new Evacuation::GoalRenderer());
 	}
 }

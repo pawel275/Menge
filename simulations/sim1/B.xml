@@ -67,7 +67,8 @@
 		<Goal type="evAABB" id="4" min_x="-8" min_y="-12.8" max_x="-6.4" max_y="-11.2" weight="1.0" adjacent="3,5" next="3" />
 		<Goal type="evAABB" id="3" min_x="-8" min_y="-16" max_x="-6.4" max_y="-14.4" weight="1.0" adjacent="273,4" next="273" />
 		<Goal type="evAABB" id="273" min_x="-3.2" min_y="-16" max_x="-1.6" max_y="-14.4" weight="1.0" adjacent="3,2,274" next="2" />
-		<Goal type="evAABB" id="2" min_x="-1.6" min_y="-16" max_x="0" max_y="-14.4" weight="1.0" adjacent="273,276" next="" />
+		<Goal type="evAABB" id="2" min_x="-1.6" min_y="-16" max_x="0" max_y="-14.4" weight="1.0" adjacent="1,273,276" next="1" />
+		<Goal type="evAABB" id="1" min_x="-1.6" min_y="-17.6" max_x="0" max_y="-16" weight="1.0" adjacent="2" next="" />
 		<Goal type="evAABB" id="276" min_x="8" min_y="-16" max_x="9.6" max_y="-14.4" weight="1.0" adjacent="2" next="2" />
 		<Goal type="evAABB" id="274" min_x="-3.2" min_y="-12.8" max_x="-1.6" max_y="-11.2" weight="1.0" adjacent="273" next="273" />
 		<Goal type="evAABB" id="269" min_x="-16" min_y="-9.6" max_x="-14.4" max_y="-8" weight="1.0" adjacent="270,8" next="8" />
@@ -232,7 +233,8 @@
 		<Goal type="evAABB" id="120" min_x="3.2" min_y="9.6" max_x="4.8" max_y="11.2" weight="1.0" adjacent="119,121" next="121" />
 		<Goal type="evAABB" id="121" min_x="1.6" min_y="9.6" max_x="3.2" max_y="11.2" weight="1.0" adjacent="120,122" next="122" />
 		<Goal type="evAABB" id="122" min_x="1.6" min_y="14.4" max_x="3.2" max_y="16" weight="1.0" adjacent="121,123" next="123" />
-		<Goal type="evAABB" id="123" min_x="0" min_y="14.4" max_x="1.6" max_y="16" weight="1.0" adjacent="122" next="" />
+		<Goal type="evAABB" id="123" min_x="0" min_y="14.4" max_x="1.6" max_y="16" weight="1.0" adjacent="122,124" next="124" />
+		<Goal type="evAABB" id="124" min_x="0" min_y="16" max_x="1.6" max_y="17.6" weight="1.0" adjacent="123" next="" />
 		<Goal type="evAABB" id="126" min_x="6.4" min_y="14.4" max_x="8" max_y="16" weight="1.0" adjacent="115" next="115" />
 		<Goal type="evAABB" id="128" min_x="14.4" min_y="14.4" max_x="16" max_y="16" weight="1.0" adjacent="129,110" next="110" />
 		<Goal type="evAABB" id="129" min_x="12.8" min_y="14.4" max_x="14.4" max_y="16" weight="1.0" adjacent="128" next="128" />
@@ -247,10 +249,39 @@
 		<Goal type="evAABB" id="141" min_x="-11.2" min_y="-3.2" max_x="-9.6" max_y="-1.6" weight="1.0" adjacent="142,140" next="140" />
 		<Goal type="evAABB" id="142" min_x="-11.2" min_y="-1.6" max_x="-9.6" max_y="0" weight="1.0" adjacent="141" next="141" />
 	</GoalSet>
+	
+	<GoalSet id="1" >
+		<Goal type="AABB" id="1" min_x="-1.6" min_y="-20.6" max_x="0" max_y="-19" weight="1" />
+		<Goal type="AABB" id="2" min_x="0" min_y="19" max_x="1.6" max_y="20.6" weight="1" />
+	</GoalSet>
+	
 	<State name="Walk" final="0">
 		<GoalSelector type="known_path" goal_set="0" />
 		<VelComponent type="goal" />
 	</State>
+	
+	<State name="Out" final="0">
+		<GoalSelector type="identity" />
+		<VelComponent type="goal" />
+	</State>
+	
+	<State name="GoAway" final="1">
+		<GoalSelector type="nearest" goal_set="1" />
+		<VelComponent type="goal" />
+	</State>
+	
+	<Transition from="Walk" to="Out">
+		<Condition type="AABB" inside="1" min_x="-1.6" min_y="-17.6" max_x="0" max_y="-16" />
+	</Transition>
+	
+	<Transition from="Walk" to="Out">
+		<Condition type="AABB" inside="1" min_x="0" min_y="16" max_x="1.6" max_y="17.6" />
+	</Transition>
+	
+	<Transition from="Out" to="GoAway">
+		<Condition type="auto" />
+	</Transition>
+	
 	<Transition from="Walk" to="Walk">
 		<Condition type="goal_reached" />
 	</Transition>

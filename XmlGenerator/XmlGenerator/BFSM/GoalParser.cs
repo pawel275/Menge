@@ -18,8 +18,10 @@ namespace XmlGenerator.BFSM
         public List<Goal> ParsePaths()
         {
             var solution = ReadGoals(xml.Root.Elements().First(x => x.Name.LocalName == "polyline")).ToList();
-            solution.RemoveAt(0);
-            solution.RemoveAt(solution.Count - 1);
+            solution.First().Y -= 8;
+            solution.Last().Y += 8;
+            Console.WriteLine(solution.First());
+            Console.WriteLine(solution.Last());
 
             polylines = ReadPolylines(xml.Root.Elements().First(x => x.Name.LocalName == "g"));
 

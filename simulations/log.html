@@ -45,6 +45,9 @@
 		<td class="inf">Loaded: Aircraft_utils<br>&nbsp;&nbsp;&nbsp;&nbsp;Utilties for simulating aircraft loading and unloading including the following:<br>&nbsp;&nbsp;&nbsp;&nbsp;Action "set_xproperty" - which sets properties according to the agent's position along the x-axis<br>&nbsp;&nbsp;&nbsp;&nbsp;Condition "clear_AABB" - Transition into a state according to whether or not an AABB is clear </td>
 	</tr>
 	<tr>
+		<td class="inf">Loaded: evacuation<br>&nbsp;&nbsp;&nbsp;&nbsp;Utilities for simulating evacuation</td>
+	</tr>
+	<tr>
 		<td class="inf">Loaded: formations<br>&nbsp;&nbsp;&nbsp;&nbsp;Utilities for adding formations to ped simsincluding the following:<br>&nbsp;&nbsp;&nbsp;&nbsp;Modifier "formation" - forces agents to move in formation. </td>
 	</tr>
 	<tr>
@@ -72,25 +75,22 @@
 		<td class="inf">Scene root: C:\Users\pawel\Projects\Menge\simulations\sim1.</td>
 	</tr>
 	<tr>
-		<td class="war">Missing the "dist" attribute on line 33<br></td>
+		<td class="war">Missing the "dist" attribute on line 12<br></td>
 	</tr>
 	<tr>
-		<td class="war">Agent generator on line 33 has no valid noise definition.  No noise applied.</td>
-	</tr>
-	<tr>
-		<td class="war">Missing the "dist" attribute on line 46<br></td>
-	</tr>
-	<tr>
-		<td class="war">Agent generator on line 46 has no valid noise definition.  No noise applied.</td>
+		<td class="war">Agent generator on line 12 has no valid noise definition.  No noise applied.</td>
 	</tr>
 	<tr>
 		<td class="divider"/>
 	</tr>
 	<tr>
-		<td class="inf">Loading behavior from xml: C:\Users\pawel\Projects\Menge\simulations\sim1\randomGoalB.xml</td>
+		<td class="inf">Loading behavior from xml: C:\Users\pawel\Projects\Menge\simulations\sim1\B.xml</td>
 	</tr>
 	<tr>
 		<td class="inf">Behavior root: C:\Users\pawel\Projects\Menge\simulations\sim1</td>
+	</tr>
+	<tr>
+		<td class="war">Expecting a missing size_t attribute (capacity) on line 4.  Using default value: 4294967295.</td>
 	</tr>
 	<tr>
 		<td class="war">Expecting a missing size_t attribute (capacity) on line 5.  Using default value: 4294967295.</td>
@@ -102,28 +102,751 @@
 		<td class="war">Expecting a missing size_t attribute (capacity) on line 7.  Using default value: 4294967295.</td>
 	</tr>
 	<tr>
-		<td class="war">Expecting a missing size_t attribute (capacity) on line 10.  Using default value: 4294967295.</td>
+		<td class="war">Expecting a missing size_t attribute (capacity) on line 8.  Using default value: 4294967295.</td>
 	</tr>
 	<tr>
-		<td class="war">Expecting a missing float attribute (weight) on line 10.  Using default value: 1.</td>
+		<td class="war">Expecting a missing size_t attribute (capacity) on line 9.  Using default value: 4294967295.</td>
+	</tr>
+	<tr>
+		<td class="war">Expecting a missing size_t attribute (capacity) on line 10.  Using default value: 4294967295.</td>
 	</tr>
 	<tr>
 		<td class="war">Expecting a missing size_t attribute (capacity) on line 11.  Using default value: 4294967295.</td>
 	</tr>
 	<tr>
-		<td class="war">Expecting a missing float attribute (weight) on line 11.  Using default value: 1.</td>
+		<td class="war">Expecting a missing size_t attribute (capacity) on line 12.  Using default value: 4294967295.</td>
 	</tr>
 	<tr>
-		<td class="war">Expecting a missing boolean attribute (persistent) on line 15.  Using default value: 0.</td>
+		<td class="war">Expecting a missing size_t attribute (capacity) on line 13.  Using default value: 4294967295.</td>
 	</tr>
 	<tr>
-		<td class="war">Expecting a missing boolean attribute (persistent) on line 19.  Using default value: 0.</td>
+		<td class="war">Expecting a missing size_t attribute (capacity) on line 14.  Using default value: 4294967295.</td>
 	</tr>
 	<tr>
-		<td class="war">Expecting a missing boolean attribute (persistent) on line 33.  Using default value: 0.</td>
+		<td class="war">Expecting a missing size_t attribute (capacity) on line 15.  Using default value: 4294967295.</td>
 	</tr>
 	<tr>
-		<td class="war">Expecting a missing boolean attribute (persistent) on line 37.  Using default value: 0.</td>
+		<td class="war">Expecting a missing size_t attribute (capacity) on line 16.  Using default value: 4294967295.</td>
+	</tr>
+	<tr>
+		<td class="war">Expecting a missing size_t attribute (capacity) on line 17.  Using default value: 4294967295.</td>
+	</tr>
+	<tr>
+		<td class="war">Expecting a missing size_t attribute (capacity) on line 18.  Using default value: 4294967295.</td>
+	</tr>
+	<tr>
+		<td class="war">Expecting a missing size_t attribute (capacity) on line 19.  Using default value: 4294967295.</td>
+	</tr>
+	<tr>
+		<td class="war">Expecting a missing size_t attribute (capacity) on line 20.  Using default value: 4294967295.</td>
+	</tr>
+	<tr>
+		<td class="war">Expecting a missing size_t attribute (capacity) on line 21.  Using default value: 4294967295.</td>
+	</tr>
+	<tr>
+		<td class="war">Expecting a missing size_t attribute (capacity) on line 22.  Using default value: 4294967295.</td>
+	</tr>
+	<tr>
+		<td class="war">Expecting a missing size_t attribute (capacity) on line 23.  Using default value: 4294967295.</td>
+	</tr>
+	<tr>
+		<td class="war">Expecting a missing size_t attribute (capacity) on line 24.  Using default value: 4294967295.</td>
+	</tr>
+	<tr>
+		<td class="war">Expecting a missing size_t attribute (capacity) on line 25.  Using default value: 4294967295.</td>
+	</tr>
+	<tr>
+		<td class="war">Expecting a missing size_t attribute (capacity) on line 26.  Using default value: 4294967295.</td>
+	</tr>
+	<tr>
+		<td class="war">Expecting a missing size_t attribute (capacity) on line 27.  Using default value: 4294967295.</td>
+	</tr>
+	<tr>
+		<td class="war">Expecting a missing size_t attribute (capacity) on line 28.  Using default value: 4294967295.</td>
+	</tr>
+	<tr>
+		<td class="war">Expecting a missing size_t attribute (capacity) on line 29.  Using default value: 4294967295.</td>
+	</tr>
+	<tr>
+		<td class="war">Expecting a missing size_t attribute (capacity) on line 30.  Using default value: 4294967295.</td>
+	</tr>
+	<tr>
+		<td class="war">Expecting a missing size_t attribute (capacity) on line 31.  Using default value: 4294967295.</td>
+	</tr>
+	<tr>
+		<td class="war">Expecting a missing size_t attribute (capacity) on line 32.  Using default value: 4294967295.</td>
+	</tr>
+	<tr>
+		<td class="war">Expecting a missing size_t attribute (capacity) on line 33.  Using default value: 4294967295.</td>
+	</tr>
+	<tr>
+		<td class="war">Expecting a missing size_t attribute (capacity) on line 34.  Using default value: 4294967295.</td>
+	</tr>
+	<tr>
+		<td class="war">Expecting a missing size_t attribute (capacity) on line 35.  Using default value: 4294967295.</td>
+	</tr>
+	<tr>
+		<td class="war">Expecting a missing size_t attribute (capacity) on line 36.  Using default value: 4294967295.</td>
+	</tr>
+	<tr>
+		<td class="war">Expecting a missing size_t attribute (capacity) on line 37.  Using default value: 4294967295.</td>
+	</tr>
+	<tr>
+		<td class="war">Expecting a missing size_t attribute (capacity) on line 38.  Using default value: 4294967295.</td>
+	</tr>
+	<tr>
+		<td class="war">Expecting a missing size_t attribute (capacity) on line 39.  Using default value: 4294967295.</td>
+	</tr>
+	<tr>
+		<td class="war">Expecting a missing size_t attribute (capacity) on line 40.  Using default value: 4294967295.</td>
+	</tr>
+	<tr>
+		<td class="war">Expecting a missing size_t attribute (capacity) on line 41.  Using default value: 4294967295.</td>
+	</tr>
+	<tr>
+		<td class="war">Expecting a missing size_t attribute (capacity) on line 42.  Using default value: 4294967295.</td>
+	</tr>
+	<tr>
+		<td class="war">Expecting a missing size_t attribute (capacity) on line 43.  Using default value: 4294967295.</td>
+	</tr>
+	<tr>
+		<td class="war">Expecting a missing size_t attribute (capacity) on line 44.  Using default value: 4294967295.</td>
+	</tr>
+	<tr>
+		<td class="war">Expecting a missing size_t attribute (capacity) on line 45.  Using default value: 4294967295.</td>
+	</tr>
+	<tr>
+		<td class="war">Expecting a missing size_t attribute (capacity) on line 46.  Using default value: 4294967295.</td>
+	</tr>
+	<tr>
+		<td class="war">Expecting a missing size_t attribute (capacity) on line 47.  Using default value: 4294967295.</td>
+	</tr>
+	<tr>
+		<td class="war">Expecting a missing size_t attribute (capacity) on line 48.  Using default value: 4294967295.</td>
+	</tr>
+	<tr>
+		<td class="war">Expecting a missing size_t attribute (capacity) on line 49.  Using default value: 4294967295.</td>
+	</tr>
+	<tr>
+		<td class="war">Expecting a missing size_t attribute (capacity) on line 50.  Using default value: 4294967295.</td>
+	</tr>
+	<tr>
+		<td class="war">Expecting a missing size_t attribute (capacity) on line 51.  Using default value: 4294967295.</td>
+	</tr>
+	<tr>
+		<td class="war">Expecting a missing size_t attribute (capacity) on line 52.  Using default value: 4294967295.</td>
+	</tr>
+	<tr>
+		<td class="war">Expecting a missing size_t attribute (capacity) on line 53.  Using default value: 4294967295.</td>
+	</tr>
+	<tr>
+		<td class="war">Expecting a missing size_t attribute (capacity) on line 54.  Using default value: 4294967295.</td>
+	</tr>
+	<tr>
+		<td class="war">Expecting a missing size_t attribute (capacity) on line 55.  Using default value: 4294967295.</td>
+	</tr>
+	<tr>
+		<td class="war">Expecting a missing size_t attribute (capacity) on line 56.  Using default value: 4294967295.</td>
+	</tr>
+	<tr>
+		<td class="war">Expecting a missing size_t attribute (capacity) on line 57.  Using default value: 4294967295.</td>
+	</tr>
+	<tr>
+		<td class="war">Expecting a missing size_t attribute (capacity) on line 58.  Using default value: 4294967295.</td>
+	</tr>
+	<tr>
+		<td class="war">Expecting a missing size_t attribute (capacity) on line 59.  Using default value: 4294967295.</td>
+	</tr>
+	<tr>
+		<td class="war">Expecting a missing size_t attribute (capacity) on line 60.  Using default value: 4294967295.</td>
+	</tr>
+	<tr>
+		<td class="war">Expecting a missing size_t attribute (capacity) on line 61.  Using default value: 4294967295.</td>
+	</tr>
+	<tr>
+		<td class="war">Expecting a missing size_t attribute (capacity) on line 62.  Using default value: 4294967295.</td>
+	</tr>
+	<tr>
+		<td class="war">Expecting a missing size_t attribute (capacity) on line 63.  Using default value: 4294967295.</td>
+	</tr>
+	<tr>
+		<td class="war">Expecting a missing size_t attribute (capacity) on line 64.  Using default value: 4294967295.</td>
+	</tr>
+	<tr>
+		<td class="war">Expecting a missing size_t attribute (capacity) on line 65.  Using default value: 4294967295.</td>
+	</tr>
+	<tr>
+		<td class="war">Expecting a missing size_t attribute (capacity) on line 66.  Using default value: 4294967295.</td>
+	</tr>
+	<tr>
+		<td class="war">Expecting a missing size_t attribute (capacity) on line 67.  Using default value: 4294967295.</td>
+	</tr>
+	<tr>
+		<td class="war">Expecting a missing size_t attribute (capacity) on line 68.  Using default value: 4294967295.</td>
+	</tr>
+	<tr>
+		<td class="war">Expecting a missing size_t attribute (capacity) on line 69.  Using default value: 4294967295.</td>
+	</tr>
+	<tr>
+		<td class="war">Expecting a missing size_t attribute (capacity) on line 70.  Using default value: 4294967295.</td>
+	</tr>
+	<tr>
+		<td class="war">Expecting a missing size_t attribute (capacity) on line 71.  Using default value: 4294967295.</td>
+	</tr>
+	<tr>
+		<td class="war">Expecting a missing size_t attribute (capacity) on line 72.  Using default value: 4294967295.</td>
+	</tr>
+	<tr>
+		<td class="war">Expecting a missing size_t attribute (capacity) on line 73.  Using default value: 4294967295.</td>
+	</tr>
+	<tr>
+		<td class="war">Expecting a missing size_t attribute (capacity) on line 74.  Using default value: 4294967295.</td>
+	</tr>
+	<tr>
+		<td class="war">Expecting a missing size_t attribute (capacity) on line 75.  Using default value: 4294967295.</td>
+	</tr>
+	<tr>
+		<td class="war">Expecting a missing size_t attribute (capacity) on line 76.  Using default value: 4294967295.</td>
+	</tr>
+	<tr>
+		<td class="war">Expecting a missing size_t attribute (capacity) on line 77.  Using default value: 4294967295.</td>
+	</tr>
+	<tr>
+		<td class="war">Expecting a missing size_t attribute (capacity) on line 78.  Using default value: 4294967295.</td>
+	</tr>
+	<tr>
+		<td class="war">Expecting a missing size_t attribute (capacity) on line 79.  Using default value: 4294967295.</td>
+	</tr>
+	<tr>
+		<td class="war">Expecting a missing size_t attribute (capacity) on line 80.  Using default value: 4294967295.</td>
+	</tr>
+	<tr>
+		<td class="war">Expecting a missing size_t attribute (capacity) on line 81.  Using default value: 4294967295.</td>
+	</tr>
+	<tr>
+		<td class="war">Expecting a missing size_t attribute (capacity) on line 82.  Using default value: 4294967295.</td>
+	</tr>
+	<tr>
+		<td class="war">Expecting a missing size_t attribute (capacity) on line 83.  Using default value: 4294967295.</td>
+	</tr>
+	<tr>
+		<td class="war">Expecting a missing size_t attribute (capacity) on line 84.  Using default value: 4294967295.</td>
+	</tr>
+	<tr>
+		<td class="war">Expecting a missing size_t attribute (capacity) on line 85.  Using default value: 4294967295.</td>
+	</tr>
+	<tr>
+		<td class="war">Expecting a missing size_t attribute (capacity) on line 86.  Using default value: 4294967295.</td>
+	</tr>
+	<tr>
+		<td class="war">Expecting a missing size_t attribute (capacity) on line 87.  Using default value: 4294967295.</td>
+	</tr>
+	<tr>
+		<td class="war">Expecting a missing size_t attribute (capacity) on line 88.  Using default value: 4294967295.</td>
+	</tr>
+	<tr>
+		<td class="war">Expecting a missing size_t attribute (capacity) on line 89.  Using default value: 4294967295.</td>
+	</tr>
+	<tr>
+		<td class="war">Expecting a missing size_t attribute (capacity) on line 90.  Using default value: 4294967295.</td>
+	</tr>
+	<tr>
+		<td class="war">Expecting a missing size_t attribute (capacity) on line 91.  Using default value: 4294967295.</td>
+	</tr>
+	<tr>
+		<td class="war">Expecting a missing size_t attribute (capacity) on line 92.  Using default value: 4294967295.</td>
+	</tr>
+	<tr>
+		<td class="war">Expecting a missing size_t attribute (capacity) on line 93.  Using default value: 4294967295.</td>
+	</tr>
+	<tr>
+		<td class="war">Expecting a missing size_t attribute (capacity) on line 94.  Using default value: 4294967295.</td>
+	</tr>
+	<tr>
+		<td class="war">Expecting a missing size_t attribute (capacity) on line 95.  Using default value: 4294967295.</td>
+	</tr>
+	<tr>
+		<td class="war">Expecting a missing size_t attribute (capacity) on line 96.  Using default value: 4294967295.</td>
+	</tr>
+	<tr>
+		<td class="war">Expecting a missing size_t attribute (capacity) on line 97.  Using default value: 4294967295.</td>
+	</tr>
+	<tr>
+		<td class="war">Expecting a missing size_t attribute (capacity) on line 98.  Using default value: 4294967295.</td>
+	</tr>
+	<tr>
+		<td class="war">Expecting a missing size_t attribute (capacity) on line 99.  Using default value: 4294967295.</td>
+	</tr>
+	<tr>
+		<td class="war">Expecting a missing size_t attribute (capacity) on line 100.  Using default value: 4294967295.</td>
+	</tr>
+	<tr>
+		<td class="war">Expecting a missing size_t attribute (capacity) on line 101.  Using default value: 4294967295.</td>
+	</tr>
+	<tr>
+		<td class="war">Expecting a missing size_t attribute (capacity) on line 102.  Using default value: 4294967295.</td>
+	</tr>
+	<tr>
+		<td class="war">Expecting a missing size_t attribute (capacity) on line 103.  Using default value: 4294967295.</td>
+	</tr>
+	<tr>
+		<td class="war">Expecting a missing size_t attribute (capacity) on line 104.  Using default value: 4294967295.</td>
+	</tr>
+	<tr>
+		<td class="war">Expecting a missing size_t attribute (capacity) on line 105.  Using default value: 4294967295.</td>
+	</tr>
+	<tr>
+		<td class="war">Expecting a missing size_t attribute (capacity) on line 106.  Using default value: 4294967295.</td>
+	</tr>
+	<tr>
+		<td class="war">Expecting a missing size_t attribute (capacity) on line 107.  Using default value: 4294967295.</td>
+	</tr>
+	<tr>
+		<td class="war">Expecting a missing size_t attribute (capacity) on line 108.  Using default value: 4294967295.</td>
+	</tr>
+	<tr>
+		<td class="war">Expecting a missing size_t attribute (capacity) on line 109.  Using default value: 4294967295.</td>
+	</tr>
+	<tr>
+		<td class="war">Expecting a missing size_t attribute (capacity) on line 110.  Using default value: 4294967295.</td>
+	</tr>
+	<tr>
+		<td class="war">Expecting a missing size_t attribute (capacity) on line 111.  Using default value: 4294967295.</td>
+	</tr>
+	<tr>
+		<td class="war">Expecting a missing size_t attribute (capacity) on line 112.  Using default value: 4294967295.</td>
+	</tr>
+	<tr>
+		<td class="war">Expecting a missing size_t attribute (capacity) on line 113.  Using default value: 4294967295.</td>
+	</tr>
+	<tr>
+		<td class="war">Expecting a missing size_t attribute (capacity) on line 114.  Using default value: 4294967295.</td>
+	</tr>
+	<tr>
+		<td class="war">Expecting a missing size_t attribute (capacity) on line 115.  Using default value: 4294967295.</td>
+	</tr>
+	<tr>
+		<td class="war">Expecting a missing size_t attribute (capacity) on line 116.  Using default value: 4294967295.</td>
+	</tr>
+	<tr>
+		<td class="war">Expecting a missing size_t attribute (capacity) on line 117.  Using default value: 4294967295.</td>
+	</tr>
+	<tr>
+		<td class="war">Expecting a missing size_t attribute (capacity) on line 118.  Using default value: 4294967295.</td>
+	</tr>
+	<tr>
+		<td class="war">Expecting a missing size_t attribute (capacity) on line 119.  Using default value: 4294967295.</td>
+	</tr>
+	<tr>
+		<td class="war">Expecting a missing size_t attribute (capacity) on line 120.  Using default value: 4294967295.</td>
+	</tr>
+	<tr>
+		<td class="war">Expecting a missing size_t attribute (capacity) on line 121.  Using default value: 4294967295.</td>
+	</tr>
+	<tr>
+		<td class="war">Expecting a missing size_t attribute (capacity) on line 122.  Using default value: 4294967295.</td>
+	</tr>
+	<tr>
+		<td class="war">Expecting a missing size_t attribute (capacity) on line 123.  Using default value: 4294967295.</td>
+	</tr>
+	<tr>
+		<td class="war">Expecting a missing size_t attribute (capacity) on line 124.  Using default value: 4294967295.</td>
+	</tr>
+	<tr>
+		<td class="war">Expecting a missing size_t attribute (capacity) on line 125.  Using default value: 4294967295.</td>
+	</tr>
+	<tr>
+		<td class="war">Expecting a missing size_t attribute (capacity) on line 126.  Using default value: 4294967295.</td>
+	</tr>
+	<tr>
+		<td class="war">Expecting a missing size_t attribute (capacity) on line 127.  Using default value: 4294967295.</td>
+	</tr>
+	<tr>
+		<td class="war">Expecting a missing size_t attribute (capacity) on line 128.  Using default value: 4294967295.</td>
+	</tr>
+	<tr>
+		<td class="war">Expecting a missing size_t attribute (capacity) on line 129.  Using default value: 4294967295.</td>
+	</tr>
+	<tr>
+		<td class="war">Expecting a missing size_t attribute (capacity) on line 130.  Using default value: 4294967295.</td>
+	</tr>
+	<tr>
+		<td class="war">Expecting a missing size_t attribute (capacity) on line 131.  Using default value: 4294967295.</td>
+	</tr>
+	<tr>
+		<td class="war">Expecting a missing size_t attribute (capacity) on line 132.  Using default value: 4294967295.</td>
+	</tr>
+	<tr>
+		<td class="war">Expecting a missing size_t attribute (capacity) on line 133.  Using default value: 4294967295.</td>
+	</tr>
+	<tr>
+		<td class="war">Expecting a missing size_t attribute (capacity) on line 134.  Using default value: 4294967295.</td>
+	</tr>
+	<tr>
+		<td class="war">Expecting a missing size_t attribute (capacity) on line 135.  Using default value: 4294967295.</td>
+	</tr>
+	<tr>
+		<td class="war">Expecting a missing size_t attribute (capacity) on line 136.  Using default value: 4294967295.</td>
+	</tr>
+	<tr>
+		<td class="war">Expecting a missing size_t attribute (capacity) on line 137.  Using default value: 4294967295.</td>
+	</tr>
+	<tr>
+		<td class="war">Expecting a missing size_t attribute (capacity) on line 138.  Using default value: 4294967295.</td>
+	</tr>
+	<tr>
+		<td class="war">Expecting a missing size_t attribute (capacity) on line 139.  Using default value: 4294967295.</td>
+	</tr>
+	<tr>
+		<td class="war">Expecting a missing size_t attribute (capacity) on line 140.  Using default value: 4294967295.</td>
+	</tr>
+	<tr>
+		<td class="war">Expecting a missing size_t attribute (capacity) on line 141.  Using default value: 4294967295.</td>
+	</tr>
+	<tr>
+		<td class="war">Expecting a missing size_t attribute (capacity) on line 142.  Using default value: 4294967295.</td>
+	</tr>
+	<tr>
+		<td class="war">Expecting a missing size_t attribute (capacity) on line 143.  Using default value: 4294967295.</td>
+	</tr>
+	<tr>
+		<td class="war">Expecting a missing size_t attribute (capacity) on line 144.  Using default value: 4294967295.</td>
+	</tr>
+	<tr>
+		<td class="war">Expecting a missing size_t attribute (capacity) on line 145.  Using default value: 4294967295.</td>
+	</tr>
+	<tr>
+		<td class="war">Expecting a missing size_t attribute (capacity) on line 146.  Using default value: 4294967295.</td>
+	</tr>
+	<tr>
+		<td class="war">Expecting a missing size_t attribute (capacity) on line 147.  Using default value: 4294967295.</td>
+	</tr>
+	<tr>
+		<td class="war">Expecting a missing size_t attribute (capacity) on line 148.  Using default value: 4294967295.</td>
+	</tr>
+	<tr>
+		<td class="war">Expecting a missing size_t attribute (capacity) on line 149.  Using default value: 4294967295.</td>
+	</tr>
+	<tr>
+		<td class="war">Expecting a missing size_t attribute (capacity) on line 150.  Using default value: 4294967295.</td>
+	</tr>
+	<tr>
+		<td class="war">Expecting a missing size_t attribute (capacity) on line 151.  Using default value: 4294967295.</td>
+	</tr>
+	<tr>
+		<td class="war">Expecting a missing size_t attribute (capacity) on line 152.  Using default value: 4294967295.</td>
+	</tr>
+	<tr>
+		<td class="war">Expecting a missing size_t attribute (capacity) on line 153.  Using default value: 4294967295.</td>
+	</tr>
+	<tr>
+		<td class="war">Expecting a missing size_t attribute (capacity) on line 154.  Using default value: 4294967295.</td>
+	</tr>
+	<tr>
+		<td class="war">Expecting a missing size_t attribute (capacity) on line 155.  Using default value: 4294967295.</td>
+	</tr>
+	<tr>
+		<td class="war">Expecting a missing size_t attribute (capacity) on line 156.  Using default value: 4294967295.</td>
+	</tr>
+	<tr>
+		<td class="war">Expecting a missing size_t attribute (capacity) on line 157.  Using default value: 4294967295.</td>
+	</tr>
+	<tr>
+		<td class="war">Expecting a missing size_t attribute (capacity) on line 158.  Using default value: 4294967295.</td>
+	</tr>
+	<tr>
+		<td class="war">Expecting a missing size_t attribute (capacity) on line 159.  Using default value: 4294967295.</td>
+	</tr>
+	<tr>
+		<td class="war">Expecting a missing size_t attribute (capacity) on line 160.  Using default value: 4294967295.</td>
+	</tr>
+	<tr>
+		<td class="war">Expecting a missing size_t attribute (capacity) on line 161.  Using default value: 4294967295.</td>
+	</tr>
+	<tr>
+		<td class="war">Expecting a missing size_t attribute (capacity) on line 162.  Using default value: 4294967295.</td>
+	</tr>
+	<tr>
+		<td class="war">Expecting a missing size_t attribute (capacity) on line 163.  Using default value: 4294967295.</td>
+	</tr>
+	<tr>
+		<td class="war">Expecting a missing size_t attribute (capacity) on line 164.  Using default value: 4294967295.</td>
+	</tr>
+	<tr>
+		<td class="war">Expecting a missing size_t attribute (capacity) on line 165.  Using default value: 4294967295.</td>
+	</tr>
+	<tr>
+		<td class="war">Expecting a missing size_t attribute (capacity) on line 166.  Using default value: 4294967295.</td>
+	</tr>
+	<tr>
+		<td class="war">Expecting a missing size_t attribute (capacity) on line 167.  Using default value: 4294967295.</td>
+	</tr>
+	<tr>
+		<td class="war">Expecting a missing size_t attribute (capacity) on line 168.  Using default value: 4294967295.</td>
+	</tr>
+	<tr>
+		<td class="war">Expecting a missing size_t attribute (capacity) on line 169.  Using default value: 4294967295.</td>
+	</tr>
+	<tr>
+		<td class="war">Expecting a missing size_t attribute (capacity) on line 170.  Using default value: 4294967295.</td>
+	</tr>
+	<tr>
+		<td class="war">Expecting a missing size_t attribute (capacity) on line 171.  Using default value: 4294967295.</td>
+	</tr>
+	<tr>
+		<td class="war">Expecting a missing size_t attribute (capacity) on line 172.  Using default value: 4294967295.</td>
+	</tr>
+	<tr>
+		<td class="war">Expecting a missing size_t attribute (capacity) on line 173.  Using default value: 4294967295.</td>
+	</tr>
+	<tr>
+		<td class="war">Expecting a missing size_t attribute (capacity) on line 174.  Using default value: 4294967295.</td>
+	</tr>
+	<tr>
+		<td class="war">Expecting a missing size_t attribute (capacity) on line 175.  Using default value: 4294967295.</td>
+	</tr>
+	<tr>
+		<td class="war">Expecting a missing size_t attribute (capacity) on line 176.  Using default value: 4294967295.</td>
+	</tr>
+	<tr>
+		<td class="war">Expecting a missing size_t attribute (capacity) on line 177.  Using default value: 4294967295.</td>
+	</tr>
+	<tr>
+		<td class="war">Expecting a missing size_t attribute (capacity) on line 178.  Using default value: 4294967295.</td>
+	</tr>
+	<tr>
+		<td class="war">Expecting a missing size_t attribute (capacity) on line 179.  Using default value: 4294967295.</td>
+	</tr>
+	<tr>
+		<td class="war">Expecting a missing size_t attribute (capacity) on line 180.  Using default value: 4294967295.</td>
+	</tr>
+	<tr>
+		<td class="war">Expecting a missing size_t attribute (capacity) on line 181.  Using default value: 4294967295.</td>
+	</tr>
+	<tr>
+		<td class="war">Expecting a missing size_t attribute (capacity) on line 182.  Using default value: 4294967295.</td>
+	</tr>
+	<tr>
+		<td class="war">Expecting a missing size_t attribute (capacity) on line 183.  Using default value: 4294967295.</td>
+	</tr>
+	<tr>
+		<td class="war">Expecting a missing size_t attribute (capacity) on line 184.  Using default value: 4294967295.</td>
+	</tr>
+	<tr>
+		<td class="war">Expecting a missing size_t attribute (capacity) on line 185.  Using default value: 4294967295.</td>
+	</tr>
+	<tr>
+		<td class="war">Expecting a missing size_t attribute (capacity) on line 186.  Using default value: 4294967295.</td>
+	</tr>
+	<tr>
+		<td class="war">Expecting a missing size_t attribute (capacity) on line 187.  Using default value: 4294967295.</td>
+	</tr>
+	<tr>
+		<td class="war">Expecting a missing size_t attribute (capacity) on line 188.  Using default value: 4294967295.</td>
+	</tr>
+	<tr>
+		<td class="war">Expecting a missing size_t attribute (capacity) on line 189.  Using default value: 4294967295.</td>
+	</tr>
+	<tr>
+		<td class="war">Expecting a missing size_t attribute (capacity) on line 190.  Using default value: 4294967295.</td>
+	</tr>
+	<tr>
+		<td class="war">Expecting a missing size_t attribute (capacity) on line 191.  Using default value: 4294967295.</td>
+	</tr>
+	<tr>
+		<td class="war">Expecting a missing size_t attribute (capacity) on line 192.  Using default value: 4294967295.</td>
+	</tr>
+	<tr>
+		<td class="war">Expecting a missing size_t attribute (capacity) on line 193.  Using default value: 4294967295.</td>
+	</tr>
+	<tr>
+		<td class="war">Expecting a missing size_t attribute (capacity) on line 194.  Using default value: 4294967295.</td>
+	</tr>
+	<tr>
+		<td class="war">Expecting a missing size_t attribute (capacity) on line 195.  Using default value: 4294967295.</td>
+	</tr>
+	<tr>
+		<td class="war">Expecting a missing size_t attribute (capacity) on line 196.  Using default value: 4294967295.</td>
+	</tr>
+	<tr>
+		<td class="war">Expecting a missing size_t attribute (capacity) on line 197.  Using default value: 4294967295.</td>
+	</tr>
+	<tr>
+		<td class="war">Expecting a missing size_t attribute (capacity) on line 198.  Using default value: 4294967295.</td>
+	</tr>
+	<tr>
+		<td class="war">Expecting a missing size_t attribute (capacity) on line 199.  Using default value: 4294967295.</td>
+	</tr>
+	<tr>
+		<td class="war">Expecting a missing size_t attribute (capacity) on line 200.  Using default value: 4294967295.</td>
+	</tr>
+	<tr>
+		<td class="war">Expecting a missing size_t attribute (capacity) on line 201.  Using default value: 4294967295.</td>
+	</tr>
+	<tr>
+		<td class="war">Expecting a missing size_t attribute (capacity) on line 202.  Using default value: 4294967295.</td>
+	</tr>
+	<tr>
+		<td class="war">Expecting a missing size_t attribute (capacity) on line 203.  Using default value: 4294967295.</td>
+	</tr>
+	<tr>
+		<td class="war">Expecting a missing size_t attribute (capacity) on line 204.  Using default value: 4294967295.</td>
+	</tr>
+	<tr>
+		<td class="war">Expecting a missing size_t attribute (capacity) on line 205.  Using default value: 4294967295.</td>
+	</tr>
+	<tr>
+		<td class="war">Expecting a missing size_t attribute (capacity) on line 206.  Using default value: 4294967295.</td>
+	</tr>
+	<tr>
+		<td class="war">Expecting a missing size_t attribute (capacity) on line 207.  Using default value: 4294967295.</td>
+	</tr>
+	<tr>
+		<td class="war">Expecting a missing size_t attribute (capacity) on line 208.  Using default value: 4294967295.</td>
+	</tr>
+	<tr>
+		<td class="war">Expecting a missing size_t attribute (capacity) on line 209.  Using default value: 4294967295.</td>
+	</tr>
+	<tr>
+		<td class="war">Expecting a missing size_t attribute (capacity) on line 210.  Using default value: 4294967295.</td>
+	</tr>
+	<tr>
+		<td class="war">Expecting a missing size_t attribute (capacity) on line 211.  Using default value: 4294967295.</td>
+	</tr>
+	<tr>
+		<td class="war">Expecting a missing size_t attribute (capacity) on line 212.  Using default value: 4294967295.</td>
+	</tr>
+	<tr>
+		<td class="war">Expecting a missing size_t attribute (capacity) on line 213.  Using default value: 4294967295.</td>
+	</tr>
+	<tr>
+		<td class="war">Expecting a missing size_t attribute (capacity) on line 214.  Using default value: 4294967295.</td>
+	</tr>
+	<tr>
+		<td class="war">Expecting a missing size_t attribute (capacity) on line 215.  Using default value: 4294967295.</td>
+	</tr>
+	<tr>
+		<td class="war">Expecting a missing size_t attribute (capacity) on line 216.  Using default value: 4294967295.</td>
+	</tr>
+	<tr>
+		<td class="war">Expecting a missing size_t attribute (capacity) on line 217.  Using default value: 4294967295.</td>
+	</tr>
+	<tr>
+		<td class="war">Expecting a missing size_t attribute (capacity) on line 218.  Using default value: 4294967295.</td>
+	</tr>
+	<tr>
+		<td class="war">Expecting a missing size_t attribute (capacity) on line 219.  Using default value: 4294967295.</td>
+	</tr>
+	<tr>
+		<td class="war">Expecting a missing size_t attribute (capacity) on line 220.  Using default value: 4294967295.</td>
+	</tr>
+	<tr>
+		<td class="war">Expecting a missing size_t attribute (capacity) on line 221.  Using default value: 4294967295.</td>
+	</tr>
+	<tr>
+		<td class="war">Expecting a missing size_t attribute (capacity) on line 222.  Using default value: 4294967295.</td>
+	</tr>
+	<tr>
+		<td class="war">Expecting a missing size_t attribute (capacity) on line 223.  Using default value: 4294967295.</td>
+	</tr>
+	<tr>
+		<td class="war">Expecting a missing size_t attribute (capacity) on line 224.  Using default value: 4294967295.</td>
+	</tr>
+	<tr>
+		<td class="war">Expecting a missing size_t attribute (capacity) on line 225.  Using default value: 4294967295.</td>
+	</tr>
+	<tr>
+		<td class="war">Expecting a missing size_t attribute (capacity) on line 226.  Using default value: 4294967295.</td>
+	</tr>
+	<tr>
+		<td class="war">Expecting a missing size_t attribute (capacity) on line 227.  Using default value: 4294967295.</td>
+	</tr>
+	<tr>
+		<td class="war">Expecting a missing size_t attribute (capacity) on line 228.  Using default value: 4294967295.</td>
+	</tr>
+	<tr>
+		<td class="war">Expecting a missing size_t attribute (capacity) on line 229.  Using default value: 4294967295.</td>
+	</tr>
+	<tr>
+		<td class="war">Expecting a missing size_t attribute (capacity) on line 230.  Using default value: 4294967295.</td>
+	</tr>
+	<tr>
+		<td class="war">Expecting a missing size_t attribute (capacity) on line 231.  Using default value: 4294967295.</td>
+	</tr>
+	<tr>
+		<td class="war">Expecting a missing size_t attribute (capacity) on line 232.  Using default value: 4294967295.</td>
+	</tr>
+	<tr>
+		<td class="war">Expecting a missing size_t attribute (capacity) on line 233.  Using default value: 4294967295.</td>
+	</tr>
+	<tr>
+		<td class="war">Expecting a missing size_t attribute (capacity) on line 234.  Using default value: 4294967295.</td>
+	</tr>
+	<tr>
+		<td class="war">Expecting a missing size_t attribute (capacity) on line 235.  Using default value: 4294967295.</td>
+	</tr>
+	<tr>
+		<td class="war">Expecting a missing size_t attribute (capacity) on line 236.  Using default value: 4294967295.</td>
+	</tr>
+	<tr>
+		<td class="war">Expecting a missing size_t attribute (capacity) on line 237.  Using default value: 4294967295.</td>
+	</tr>
+	<tr>
+		<td class="war">Expecting a missing size_t attribute (capacity) on line 238.  Using default value: 4294967295.</td>
+	</tr>
+	<tr>
+		<td class="war">Expecting a missing size_t attribute (capacity) on line 239.  Using default value: 4294967295.</td>
+	</tr>
+	<tr>
+		<td class="war">Expecting a missing size_t attribute (capacity) on line 240.  Using default value: 4294967295.</td>
+	</tr>
+	<tr>
+		<td class="war">Expecting a missing size_t attribute (capacity) on line 241.  Using default value: 4294967295.</td>
+	</tr>
+	<tr>
+		<td class="war">Expecting a missing size_t attribute (capacity) on line 242.  Using default value: 4294967295.</td>
+	</tr>
+	<tr>
+		<td class="war">Expecting a missing size_t attribute (capacity) on line 243.  Using default value: 4294967295.</td>
+	</tr>
+	<tr>
+		<td class="war">Expecting a missing size_t attribute (capacity) on line 244.  Using default value: 4294967295.</td>
+	</tr>
+	<tr>
+		<td class="war">Expecting a missing size_t attribute (capacity) on line 245.  Using default value: 4294967295.</td>
+	</tr>
+	<tr>
+		<td class="war">Expecting a missing size_t attribute (capacity) on line 246.  Using default value: 4294967295.</td>
+	</tr>
+	<tr>
+		<td class="war">Expecting a missing size_t attribute (capacity) on line 247.  Using default value: 4294967295.</td>
+	</tr>
+	<tr>
+		<td class="war">Expecting a missing size_t attribute (capacity) on line 248.  Using default value: 4294967295.</td>
+	</tr>
+	<tr>
+		<td class="war">Expecting a missing size_t attribute (capacity) on line 249.  Using default value: 4294967295.</td>
+	</tr>
+	<tr>
+		<td class="war">Expecting a missing size_t attribute (capacity) on line 250.  Using default value: 4294967295.</td>
+	</tr>
+	<tr>
+		<td class="war">Expecting a missing size_t attribute (capacity) on line 254.  Using default value: 4294967295.</td>
+	</tr>
+	<tr>
+		<td class="war">Expecting a missing size_t attribute (capacity) on line 255.  Using default value: 4294967295.</td>
+	</tr>
+	<tr>
+		<td class="war">Expecting a missing boolean attribute (persistent) on line 259.  Using default value: 0.</td>
+	</tr>
+	<tr>
+		<td class="war">Expecting a missing boolean attribute (persistent) on line 264.  Using default value: 0.</td>
+	</tr>
+	<tr>
+		<td class="war">Expecting a missing boolean attribute (persistent) on line 269.  Using default value: 0.</td>
+	</tr>
+	<tr>
+		<td class="war">Expecting a missing float attribute (distance) on line 286.  Using default value: 0.</td>
 	</tr>
 	<tr>
 		<td class="inf">There are 0 registered tasks.<br></td>
@@ -177,6 +900,9 @@
 		<td class="err">Failed loading C:\Users\pawel\Projects\Menge\Exe\plugins\debug\Aircraft_d.dll as a plug-in</td>
 	</tr>
 	<tr>
+		<td class="inf">Loaded: evacuation<br>&nbsp;&nbsp;&nbsp;&nbsp;Utilities for simulating evacuation</td>
+	</tr>
+	<tr>
 		<td class="err">Could not find exported function</td>
 	</tr>
 	<tr>
@@ -219,10 +945,64 @@
 		<td class="war">Unable to find a vis_agent vis element for the selected element: orca. Using default visualization element.</td>
 	</tr>
 	<tr>
+		<td class="war">Unable to find a vis_agent vis element for the selected element: orca. Using default visualization element.</td>
+	</tr>
+	<tr>
+		<td class="war">Unable to find a vis_agent vis element for the selected element: orca. Using default visualization element.</td>
+	</tr>
+	<tr>
+		<td class="war">Unable to find a vis_agent vis element for the selected element: orca. Using default visualization element.</td>
+	</tr>
+	<tr>
+		<td class="war">Unable to find a vis_agent vis element for the selected element: orca. Using default visualization element.</td>
+	</tr>
+	<tr>
+		<td class="war">Unable to find a vis_agent vis element for the selected element: orca. Using default visualization element.</td>
+	</tr>
+	<tr>
+		<td class="war">Unable to find a vis_agent vis element for the selected element: orca. Using default visualization element.</td>
+	</tr>
+	<tr>
+		<td class="war">Unable to find a vis_agent vis element for the selected element: orca. Using default visualization element.</td>
+	</tr>
+	<tr>
+		<td class="war">Unable to find a vis_agent vis element for the selected element: orca. Using default visualization element.</td>
+	</tr>
+	<tr>
+		<td class="war">Unable to find a vis_agent vis element for the selected element: orca. Using default visualization element.</td>
+	</tr>
+	<tr>
+		<td class="war">Unable to find a vis_agent vis element for the selected element: orca. Using default visualization element.</td>
+	</tr>
+	<tr>
+		<td class="war">Unable to find a vis_agent vis element for the selected element: orca. Using default visualization element.</td>
+	</tr>
+	<tr>
+		<td class="war">Unable to find a vis_agent vis element for the selected element: orca. Using default visualization element.</td>
+	</tr>
+	<tr>
+		<td class="war">Unable to find a vis_agent vis element for the selected element: orca. Using default visualization element.</td>
+	</tr>
+	<tr>
+		<td class="war">Unable to find a vis_agent vis element for the selected element: orca. Using default visualization element.</td>
+	</tr>
+	<tr>
+		<td class="war">Unable to find a vis_agent vis element for the selected element: orca. Using default visualization element.</td>
+	</tr>
+	<tr>
+		<td class="war">Unable to find a vis_agent vis element for the selected element: orca. Using default visualization element.</td>
+	</tr>
+	<tr>
+		<td class="war">Unable to find a vis_agent vis element for the selected element: orca. Using default visualization element.</td>
+	</tr>
+	<tr>
+		<td class="war">Unable to find a vis_agent vis element for the selected element: orca. Using default visualization element.</td>
+	</tr>
+	<tr>
 		<td class="divider"/>
 	</tr>
 	<tr>
-		<td class="inf">Simulation time: 22<br></td>
+		<td class="inf">Simulation time: 18.5<br></td>
 	</tr>
 </table>
 </div>

@@ -15,7 +15,7 @@ namespace XmlGenerator
             {
                 writer.GoalSet.Parsed(args[0], "0", 16, scale, dx, dy);
                 writer.State.GoToGoal("Walk", "known_path", "0");
-                writer.Transition.SimpleContition("Walk", "Walk", "goal_reached");
+                writer.Transition.Simple("Walk", "Walk", "goal_reached");
             }
 
             using (var writer = new SceneWriter("S.xml"))
@@ -23,7 +23,7 @@ namespace XmlGenerator
                 writer.AgentProfile.Default("group1", "1", "1");
                 //writer.AgentGroup.Single(0, 0, "group1", "Walk");
                 double d = 150;
-                writer.AgentGroup.RandomInArea(-d * scale, -d * scale, d * scale, d * scale, 1, "group1", "Walk");
+                writer.AgentGroup.RandomInArea(-d * scale, -d * scale, d * scale, d * scale, 20, "group1", "Walk");
                 writer.ObstacleSet.Parsed(args[1], "1", scale, dx, dy);
             }
         }

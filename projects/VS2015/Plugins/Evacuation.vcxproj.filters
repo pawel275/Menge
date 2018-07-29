@@ -36,6 +36,9 @@
     <ClInclude Include="..\..\..\src\Plugins\Evacuation\KnownPathGoalSelector.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="..\..\..\src\Plugins\Evacuation\GoalRenderer.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\..\..\src\Plugins\Evacuation\Evacuation.cpp">

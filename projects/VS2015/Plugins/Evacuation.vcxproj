@@ -23,6 +23,7 @@
     <ClInclude Include="..\..\..\src\Plugins\Evacuation\Config.h" />
     <ClInclude Include="..\..\..\src\Plugins\Evacuation\DBEntry.h" />
     <ClInclude Include="..\..\..\src\Plugins\Evacuation\GoalFactory.h" />
+    <ClInclude Include="..\..\..\src\Plugins\Evacuation\GoalRenderer.h" />
     <ClInclude Include="..\..\..\src\Plugins\Evacuation\KnownPathGoalSelector.h" />
     <ClInclude Include="..\..\..\src\Plugins\Evacuation\Simulator.h" />
     <ClInclude Include="..\..\..\src\Plugins\Evacuation\UnknownPathGoalSelector.h" />

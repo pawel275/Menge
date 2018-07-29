@@ -1,4 +1,5 @@
-﻿using System.Xml;
+﻿using System;
+using System.Xml;
 
 namespace XmlGenerator.BFSM
 {
@@ -8,16 +9,37 @@ namespace XmlGenerator.BFSM
         {
         }
 
-        public void SimpleContition(string from, string to, string condition)
+        public void Simple(string from, string to, string condition)
+        {
+            _WriteTransition(from, to, () =>
+            {
+                xml.WriteStartElement("Condition");
+                xml.WriteAttributeString("type", condition);
+                xml.WriteEndElement();
+            });
+        }
+
+        public void AABB(string from, string to, double min_x, double min_y, double max_x, double max_y, bool inside)
+        {
+            _WriteTransition(from, to, () =>
+            {
+                xml.WriteStartElement("Condition");
+                xml.WriteAttributeString("type", "AABB");
+                xml.WriteAttributeString("inside", inside ? "1" : "0");
+                xml.WriteAttributeString("min_x", Utils.Str(min_x));
+                xml.WriteAttributeString("min_y", Utils.Str(min_y));
+                xml.WriteAttributeString("max_x", Utils.Str(max_x));
+                xml.WriteAttributeString("max_y", Utils.Str(max_y));
+                xml.WriteEndElement();
+            });
+        }
+
+        private void _WriteTransition(string from, string to, Action body)
         {
             xml.WriteStartElement("Transition");
             xml.WriteAttributeString("from", from);
             xml.WriteAttributeString("to", to);
-
-            xml.WriteStartElement("Condition");
-            xml.WriteAttributeString("type", condition);
-            xml.WriteEndElement();
-
+            body();
             xml.WriteEndElement();
         }
     }
