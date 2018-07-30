@@ -8,7 +8,7 @@ namespace XmlGenerator.BFSM
         {
         }
 
-        public void GoToGoal(string name, string goalSelector, string goalSet, bool final = false)
+        public void GoToGoal(string name, string goalSelector, int? goalSet = null, bool final = false)
         {
             xml.WriteStartElement("State");
             xml.WriteAttributeString("name", name);
@@ -16,7 +16,10 @@ namespace XmlGenerator.BFSM
 
             xml.WriteStartElement("GoalSelector");
             xml.WriteAttributeString("type", goalSelector);
-            xml.WriteAttributeString("goal_set", goalSet);
+            if (goalSet.HasValue)
+            {
+                xml.WriteAttributeString("goal_set", goalSet.Value.ToString());
+            }
             xml.WriteEndElement();
 
             xml.WriteStartElement("VelComponent");

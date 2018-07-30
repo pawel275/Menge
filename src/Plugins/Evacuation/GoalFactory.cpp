@@ -44,5 +44,5 @@ bool Evacuation::EvacuationAABBGoalFactory::setFromXML(Goal * goal, TiXmlElement
 		aabbGoal->_next = nextAttr.getSizeT();
 	}
 
-	return !aabbGoal->_adjacent.empty();
+	return true;
 }

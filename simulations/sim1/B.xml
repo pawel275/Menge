@@ -249,39 +249,31 @@
 		<Goal type="evAABB" id="141" min_x="-11.2" min_y="-3.2" max_x="-9.6" max_y="-1.6" weight="1.0" adjacent="142,140" next="140" />
 		<Goal type="evAABB" id="142" min_x="-11.2" min_y="-1.6" max_x="-9.6" max_y="0" weight="1.0" adjacent="141" next="141" />
 	</GoalSet>
-	
-	<GoalSet id="1" >
-		<Goal type="AABB" id="1" min_x="-1.6" min_y="-20.6" max_x="0" max_y="-19" weight="1" />
-		<Goal type="AABB" id="2" min_x="0" min_y="19" max_x="1.6" max_y="20.6" weight="1" />
+	<GoalSet id="1">
+		<Goal type="evAABB" id="1" min_x="-2.4" min_y="-24.4" max_x="0.8" max_y="-21.2" weight="1.0" adjacent="" next="" />
+		<Goal type="evAABB" id="2" min_x="-0.8" min_y="21.2" max_x="2.4" max_y="24.4" weight="1.0" adjacent="" next="" />
 	</GoalSet>
-	
 	<State name="Walk" final="0">
 		<GoalSelector type="known_path" goal_set="0" />
 		<VelComponent type="goal" />
 	</State>
-	
 	<State name="Out" final="0">
 		<GoalSelector type="identity" />
 		<VelComponent type="goal" />
 	</State>
-	
 	<State name="GoAway" final="1">
 		<GoalSelector type="nearest" goal_set="1" />
 		<VelComponent type="goal" />
 	</State>
-	
 	<Transition from="Walk" to="Out">
 		<Condition type="AABB" inside="1" min_x="-1.6" min_y="-17.6" max_x="0" max_y="-16" />
 	</Transition>
-	
 	<Transition from="Walk" to="Out">
 		<Condition type="AABB" inside="1" min_x="0" min_y="16" max_x="1.6" max_y="17.6" />
 	</Transition>
-	
 	<Transition from="Out" to="GoAway">
 		<Condition type="auto" />
 	</Transition>
-	
 	<Transition from="Walk" to="Walk">
 		<Condition type="goal_reached" />
 	</Transition>

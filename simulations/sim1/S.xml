@@ -10,26 +10,26 @@
 		<ProfileSelector type="const" name="group1" />
 		<StateSelector type="const" name="Walk" />
 		<Generator type="explicit">
-			<Agent p_x="-13.423" p_y="12.8" />
-			<Agent p_x="-8.07" p_y="-5.156" />
-			<Agent p_x="-5.82" p_y="-1.425" />
-			<Agent p_x="12.132" p_y="13.3" />
-			<Agent p_x="-5.737" p_y="-1.446" />
-			<Agent p_x="-4.675" p_y="5.454" />
-			<Agent p_x="12.869" p_y="-6.812" />
-			<Agent p_x="7.693" p_y="-4.18" />
-			<Agent p_x="6.917" p_y="-0.05" />
-			<Agent p_x="11.074" p_y="-11.013" />
-			<Agent p_x="-10.093" p_y="-4.634" />
-			<Agent p_x="1.764" p_y="8.609" />
-			<Agent p_x="12.961" p_y="-14.135" />
-			<Agent p_x="-5.173" p_y="11.192" />
-			<Agent p_x="6.395" p_y="-11.921" />
-			<Agent p_x="5.237" p_y="-11.154" />
-			<Agent p_x="-14.734" p_y="10.728" />
-			<Agent p_x="-14.101" p_y="-14.315" />
-			<Agent p_x="-9.012" p_y="-3.368" />
-			<Agent p_x="1.798" p_y="12.993" />
+			<Agent p_x="7.285" p_y="8.223" />
+			<Agent p_x="9.112" p_y="-6.806" />
+			<Agent p_x="6.195" p_y="13.192" />
+			<Agent p_x="7.117" p_y="6.81" />
+			<Agent p_x="-9.029" p_y="12.952" />
+			<Agent p_x="-12.087" p_y="12.803" />
+			<Agent p_x="-10.95" p_y="-14.674" />
+			<Agent p_x="-7.895" p_y="-12.995" />
+			<Agent p_x="11.727" p_y="2.921" />
+			<Agent p_x="9.89" p_y="13.222" />
+			<Agent p_x="1.2" p_y="3.532" />
+			<Agent p_x="-10.946" p_y="2.135" />
+			<Agent p_x="-12.253" p_y="-6.674" />
+			<Agent p_x="12.686" p_y="10.131" />
+			<Agent p_x="11.425" p_y="-0.946" />
+			<Agent p_x="-3.711" p_y="-3.959" />
+			<Agent p_x="13.177" p_y="-2.109" />
+			<Agent p_x="4.26" p_y="1.631" />
+			<Agent p_x="-13.359" p_y="-0.481" />
+			<Agent p_x="12.833" p_y="-0.676" />
 		</Generator>
 	</AgentGroup>
 	<ObstacleSet type="explicit" class="1">

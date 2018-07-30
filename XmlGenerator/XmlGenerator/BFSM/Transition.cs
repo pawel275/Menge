@@ -19,17 +19,17 @@ namespace XmlGenerator.BFSM
             });
         }
 
-        public void AABB(string from, string to, double min_x, double min_y, double max_x, double max_y, bool inside)
+        public void AABB(string from, string to, (double min_x, double min_y, double max_x, double max_y) position, bool inside)
         {
             _WriteTransition(from, to, () =>
             {
                 xml.WriteStartElement("Condition");
                 xml.WriteAttributeString("type", "AABB");
                 xml.WriteAttributeString("inside", inside ? "1" : "0");
-                xml.WriteAttributeString("min_x", Utils.Str(min_x));
-                xml.WriteAttributeString("min_y", Utils.Str(min_y));
-                xml.WriteAttributeString("max_x", Utils.Str(max_x));
-                xml.WriteAttributeString("max_y", Utils.Str(max_y));
+                xml.WriteAttributeString("min_x", Utils.Str(position.min_x));
+                xml.WriteAttributeString("min_y", Utils.Str(position.min_y));
+                xml.WriteAttributeString("max_x", Utils.Str(position.max_x));
+                xml.WriteAttributeString("max_y", Utils.Str(position.max_y));
                 xml.WriteEndElement();
             });
         }
