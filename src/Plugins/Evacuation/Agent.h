@@ -10,6 +10,7 @@ namespace Evacuation
 	class Agent : public ORCA::Agent
 	{
 	public:
+		size_t _start_goal_id;
 		EvacuationAABBGoal * _lastGoal = nullptr;
 		std::unordered_set<std::string> _dead_ends;
 	};
