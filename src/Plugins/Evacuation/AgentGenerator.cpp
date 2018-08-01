@@ -1,16 +1,13 @@
 #include "AgentGenerator.h"
 #include "Agent.h"
 
-namespace Evacuation
-{
-	AgentGenerator::AgentGenerator() : ExplicitGenerator()
-	{
+namespace Evacuation {
+	EvacuationAgentGenerator::EvacuationAgentGenerator() : ExplicitGenerator() {
 	}
 
-	void AgentGenerator::setAgentPosition(size_t i, Menge::Agents::BaseAgent * agt)
-	{
+	void EvacuationAgentGenerator::setAgentPosition(size_t i, BaseAgent * agt) {
 		if (i >= _positions.size()) {
-			throw Menge::Agents::AgentGeneratorFatalException("ExplicitGenerator trying to access an agent "
+			throw AgentGeneratorFatalException("ExplicitGenerator trying to access an agent "
 				"outside of the specified population");
 		}
 		agt->_pos = addNoise(_positions[i]);
@@ -19,19 +16,19 @@ namespace Evacuation
 		agent->_start_goal_id = _goals[i];
 	}
 
-	void AgentGenerator::addGoal(const size_t p)
+	void EvacuationAgentGenerator::addGoal(const size_t g)
 	{
-		_goals.push_back(p);
+		_goals.push_back(g);
 	}
 
-	bool AgentGeneratorFactory::setFromXML(AgentGenerator * gen, TiXmlElement * node, const std::string & behaveFldr) const
-	{
-		AgentGenerator * eGen = dynamic_cast<AgentGenerator *>(gen);
+	bool AgentGeneratorFactory::setFromXML(AgentGenerator * gen, TiXmlElement * node,
+		const std::string & specFldr) const {
+		EvacuationAgentGenerator * eGen = dynamic_cast<EvacuationAgentGenerator *>(gen);
 		assert(eGen != 0x0 &&
 			"Trying to set attributes of an explicit agent generator component on an "
 			"incompatible object");
 
-		if (!Menge::Agents::AgentGeneratorFactory::setFromXML(eGen, node, behaveFldr)) return false;
+		if (!Menge::Agents::AgentGeneratorFactory::setFromXML(eGen, node, specFldr)) return false;
 
 		for (TiXmlElement * child = node->FirstChildElement();
 			child;
@@ -43,14 +40,14 @@ namespace Evacuation
 					eGen->addPosition(p);
 					eGen->addGoal(g);
 				}
-				catch (Menge::Agents::AgentGeneratorException) {
+				catch (AgentGeneratorException) {
 					return false;
 				}
 			}
 			else {
-				Menge::logger << Menge::Logger::WARN_MSG;
-				Menge::logger << "Found an unexpected child tag in an AgentGroup on line ";
-				Menge::logger << node->Row() << ".  Ignoring the tag: " << child->ValueStr() << ".";
+				logger << Logger::WARN_MSG;
+				logger << "Found an unexpected child tag in an AgentGroup on line ";
+				logger << node->Row() << ".  Ignoring the tag: " << child->ValueStr() << ".";
 			}
 		}
 

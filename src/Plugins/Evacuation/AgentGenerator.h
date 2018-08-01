@@ -1,29 +1,37 @@
 #ifndef __EVACUATION_AGENT_GENERATOR__
 #define __EVACUATION_AGENT_GENERATOR__
 
+#include "Config.h"
 #include "Menge\MengeCore\Math\Vector2.h"
 #include "Menge\MengeCore\Agents\BaseAgent.h"
 #include "Menge\MengeCore\Agents\AgentGenerators\AgentGenerator.h"
 #include "Menge\MengeCore\Agents\AgentGenerators\ExplicitAgentGenerator.h"
 
-using namespace Menge::Math;
+#include "MengeCore/mengeCommon.h"
+#include "MengeCore/Agents/AgentGenerators/AgentGenerator.h"
+#include "MengeCore/Agents/AgentGenerators/AgentGeneratorFactory.h"
+
+#include <vector>
+
+using namespace Menge;
+using namespace Menge::Agents;
 
 namespace Evacuation {
-	class AgentGenerator : public Menge::Agents::ExplicitGenerator {
+	class EVACUATION_API EvacuationAgentGenerator : public ExplicitGenerator {
 	public:
 
-		AgentGenerator();
+		EvacuationAgentGenerator();
 
-		virtual void setAgentPosition(size_t i, Menge::Agents::BaseAgent * agt);
+		virtual void setAgentPosition(size_t i, BaseAgent * agt);
 
-		void addGoal(const size_t p);
+		void addGoal(const size_t g);
 
 	protected:
 
-		std::vector<size_t>	_goals;
+		std::vector<size_t> _goals;
 	};
 
-	class AgentGeneratorFactory : public Menge::Agents::ExplicitGeneratorFactory {
+	class EVACUATION_API AgentGeneratorFactory : public Menge::Agents::ExplicitGeneratorFactory {
 	public:
 
 		virtual const char * name() const { return "evacuation"; }
@@ -35,7 +43,7 @@ namespace Evacuation {
 
 	protected:
 
-		AgentGenerator * instance() const { return new AgentGenerator(); }
+		AgentGenerator * instance() const { return new EvacuationAgentGenerator(); }
 
 		virtual bool setFromXML(AgentGenerator * gen, TiXmlElement * node,
 			const std::string & behaveFldr) const;
@@ -43,5 +51,4 @@ namespace Evacuation {
 		size_t parseAgentGoal(TiXmlElement * node) const;
 	};
 }
-
 #endif // !__EVACUATION_AGENT_GENERATOR__
