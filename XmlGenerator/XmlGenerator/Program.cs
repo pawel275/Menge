@@ -9,8 +9,8 @@ namespace XmlGenerator
     {
         private static void Main(string[] args)
         {
-            double dx = -162;
-            double dy = -162;
+            double dx = 0;
+            double dy = 0;
             double scale = .1;
             double size = 16;
             double goAwayDist = 60;
@@ -19,10 +19,11 @@ namespace XmlGenerator
             var paths = goalParser.ParsePaths();
 
             var outGoals = _FindEnds(paths);
+            IEnumerable<Goal> goals;
 
             using (var writer = new BfsmWriter("B.xml"))
             {
-                writer.GoalSet.Parsed(paths, 0, size, scale, dx, dy);
+                goals = writer.GoalSet.Parsed(paths, 0, size, scale, dx, dy);
 
                 using (var gw = writer.GoalSet.Explicit(1))
                 {
@@ -51,9 +52,8 @@ namespace XmlGenerator
             {
                 writer.AgentProfile.Default("group1", "1", "1");
                 //writer.AgentGroup.Single(0, 0, "group1", "Walk");
-                double d = 150;
-                writer.AgentGroup.RandomInArea(-d * scale, -d * scale, d * scale, d * scale, 20, "group1", "Walk");
-                writer.ObstacleSet.Parsed(args[1], "1", scale, dx, dy);
+                var lines = writer.ObstacleSet.Parsed(args[1], "1", scale, dx, dy);
+                writer.AgentGroup.Random(lines, goals, scale, 40, "group1", "Walk");
             }
         }
 

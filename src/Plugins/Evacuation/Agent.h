@@ -12,7 +12,8 @@ namespace Evacuation
 	public:
 		size_t _start_goal_id;
 		EvacuationAABBGoal * _lastGoal = nullptr;
-		std::unordered_set<std::string> _dead_ends;
+		EvacuationAABBGoal * _secondLastGoal = nullptr;
+		std::unordered_set<size_t> _dead_ends;
 	};
 }
 

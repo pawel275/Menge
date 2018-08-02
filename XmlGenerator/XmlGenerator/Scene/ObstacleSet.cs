@@ -1,4 +1,5 @@
-﻿using System.Xml;
+﻿using System.Collections.Generic;
+using System.Xml;
 
 namespace XmlGenerator.Scene
 {
@@ -8,10 +9,10 @@ namespace XmlGenerator.Scene
         {
         }
 
-        public void Parsed(string filePath, string @class, double scale = 1, double dx = 0, double dy = 0)
+        public IEnumerable<(double x1, double y1, double x2, double y2)> Parsed(string filePath, string @class, double scale = 1, double dx = 0, double dy = 0)
         {
             var parser = new WallsParser(filePath);
-            var lines = parser.ParseLines(scale, dx, dy);
+            var lines = parser.ParseLines();
 
             xml.WriteStartElement("ObstacleSet");
             xml.WriteAttributeString("type", "explicit");
@@ -19,10 +20,12 @@ namespace XmlGenerator.Scene
 
             foreach (var (x1, y1, x2, y2) in lines)
             {
-                _WriteLine(Utils.Str(x1), Utils.Str(y1), Utils.Str(x2), Utils.Str(y2));
+                _WriteLine(Utils.Str((x1 + dx) * scale), Utils.Str((y1 + dy) * scale), Utils.Str((x2 + dx) * scale), Utils.Str((y2 + dy) * scale));
             }
 
             xml.WriteEndElement();
+
+            return lines;
         }
 
         private void _WriteLine(string x1, string y1, string x2, string y2)

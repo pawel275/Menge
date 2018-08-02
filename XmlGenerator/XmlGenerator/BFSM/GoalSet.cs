@@ -25,20 +25,20 @@ namespace XmlGenerator.BFSM
             }
         }
 
-        public void Parsed(List<Goal> paths, int id, double size = 1, double scale = 1, double dx = 0, double dy = 0)
+        public IEnumerable<Goal> Parsed(List<Goal> paths, int id, double size = 1, double scale = 1, double dx = 0, double dy = 0)
         {
-            HashSet<int> writtenGoals = new HashSet<int>();
+            HashSet<Goal> writtenGoals = new HashSet<Goal>();
 
             using (var writer = Explicit(id))
             {
                 void writePath(Goal path, Goal excluded = null)
                 {
-                    if (!writtenGoals.Contains(path.Id))
+                    if (!writtenGoals.Contains(path))
                     {
                         writer.Goal(path.Id, path.X + dx, path.Y + dy, path.Adjacent.Select(x => x.Id), path.Next?.Id, size, scale);
                     }
-                    writtenGoals.Add(path.Id);
-                    foreach (var adj in path.Adjacent.Where(x => !writtenGoals.Contains(x.Id)))
+                    writtenGoals.Add(path);
+                    foreach (var adj in path.Adjacent.Where(x => !writtenGoals.Contains(x)))
                     {
                         writePath(adj);
                     }
@@ -49,6 +49,7 @@ namespace XmlGenerator.BFSM
                     writePath(path);
                 }
             }
+            return writtenGoals;
         }
 
         public GoalSetWriter Explicit(int id)

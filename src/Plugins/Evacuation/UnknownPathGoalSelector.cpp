@@ -13,35 +13,41 @@ namespace Evacuation
 {
 	Goal * UnknownPathGoalSelector::getGoal(const BaseAgent * agent) const
 	{
+		srand(time(NULL));
+		
 		Agent * a = (Agent*)agent;
 
 		if (!a->_lastGoal)
 		{
-			const size_t GOAL_COUNT = _goalSet->size();
-			const Vector2 p = agent->_pos;
+			a->_lastGoal = (EvacuationAABBGoal*)_goalSet->getGoalByID(a->_start_goal_id);
+		}
+		else
+		{
+			if (a->_lastGoal->_adjacent.size() == 1)
+			{
+				a->_dead_ends.insert(a->_lastGoal->getID());
+			}
 
-			Goal * bestGoal;
+			std::vector<size_t> choices;
 
-			bestGoal = _goalSet->getIthGoal(0);
-			Vector2 disp = bestGoal->getCentroid() - p;
-			float bestDist = absSq(disp);
-			for (size_t i = 1; i < GOAL_COUNT; ++i) {
-				Goal * testGoal = _goalSet->getIthGoal(i);
-				disp = testGoal->getCentroid() - p;
-				float testDist = absSq(disp);
-				if (testDist < bestDist) {
-					bestDist = testDist;
-					bestGoal = testGoal;
+			for (std::vector<size_t>::iterator it = a->_lastGoal->_adjacent.begin(); it != a->_lastGoal->_adjacent.end(); ++it)
+			{
+				if (a->_dead_ends.find(*it) == a->_dead_ends.end() && (a->_secondLastGoal ? *it != a->_secondLastGoal->getID() : true)) 
+				{
+					choices.push_back(*it);
 				}
 			}
 
-			return a->_lastGoal = (EvacuationAABBGoal*)bestGoal;
+			if (choices.empty()) 
+			{
+				choices.push_back(a->_secondLastGoal->getID());
+				a->_dead_ends.insert(a->_lastGoal->getID());
+			}
+
+			a->_secondLastGoal = a->_lastGoal;
+ 			a->_lastGoal = (EvacuationAABBGoal*)_goalSet->getGoalByID(choices[rand() % choices.size()]);
 		}
 
-		srand(time(NULL));
-
-		//TODO: dead ends
-
-		return a->_lastGoal = (EvacuationAABBGoal*)_goalSet->getGoalByID(a->_lastGoal->_adjacent[rand() % a->_lastGoal->_adjacent.size()]);
+		return a->_lastGoal;
 	}
 }

@@ -15,5 +15,10 @@
                 (x + size / 2) * scale,
                 (y + size / 2) * scale);
         }
+
+        public static double Sqr(double x)
+        {
+            return x * x;
+        }
     }
 }
