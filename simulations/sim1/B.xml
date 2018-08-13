@@ -255,7 +255,7 @@
 	</GoalSet>
 	<State name="Walk" final="0">
 		<GoalSelector type="unknown_path" goal_set="0" />
-		<VelComponent type="goal" />
+		<VelComponent type="road_map" file_name="Map.txt" />
 	</State>
 	<State name="Out" final="0">
 		<GoalSelector type="identity" />

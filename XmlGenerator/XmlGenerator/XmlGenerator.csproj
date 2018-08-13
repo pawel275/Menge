@@ -51,6 +51,7 @@
     <Compile Include="BFSM\GoalSet.cs" />
     <Compile Include="BFSM\State.cs" />
     <Compile Include="BFSM\Transition.cs" />
+    <Compile Include="Map\MapWriter.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Scene\AgentGroup.cs" />

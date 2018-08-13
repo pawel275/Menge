@@ -1,4 +1,5 @@
-﻿using System.Xml;
+﻿using System;
+using System.Xml;
 
 namespace XmlGenerator.BFSM
 {
@@ -9,6 +10,27 @@ namespace XmlGenerator.BFSM
         }
 
         public void GoToGoal(string name, string goalSelector, int? goalSet = null, bool final = false)
+        {
+            _WriteState(() =>
+            {
+                xml.WriteStartElement("VelComponent");
+                xml.WriteAttributeString("type", "goal");
+                xml.WriteEndElement();
+            }, name, goalSelector, goalSet, final);
+        }
+
+        public void GoToGoalWithMap(string name, string goalSelector, string fileName, int? goalSet = null, bool final = false)
+        {
+            _WriteState(() =>
+            {
+                xml.WriteStartElement("VelComponent");
+                xml.WriteAttributeString("type", "road_map");
+                xml.WriteAttributeString("file_name", fileName);
+                xml.WriteEndElement();
+            }, name, goalSelector, goalSet, final);
+        }
+
+        private void _WriteState(Action body, string name, string goalSelector, int? goalSet = null, bool final = false)
         {
             xml.WriteStartElement("State");
             xml.WriteAttributeString("name", name);
@@ -22,9 +44,7 @@ namespace XmlGenerator.BFSM
             }
             xml.WriteEndElement();
 
-            xml.WriteStartElement("VelComponent");
-            xml.WriteAttributeString("type", "goal");
-            xml.WriteEndElement();
+            body();
 
             xml.WriteEndElement();
         }

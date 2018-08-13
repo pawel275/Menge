@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using XmlGenerator.BFSM;
+using XmlGenerator.Map;
 using XmlGenerator.Scene;
 
 namespace XmlGenerator
@@ -35,7 +36,7 @@ namespace XmlGenerator
                     gw.Goal(2, top.X + dx, top.Y + dy + goAwayDist, size: size * 2, scale: scale);
                 }
 
-                writer.State.GoToGoal("Walk", "known_path", 0);
+                writer.State.GoToGoalWithMap("Walk", "unknown_path", "Map.txt", 0);
                 writer.State.GoToGoal("Out", "identity");
                 writer.State.GoToGoal("GoAway", "nearest", 1, true);
 
@@ -55,6 +56,8 @@ namespace XmlGenerator
                 var lines = writer.ObstacleSet.Parsed(args[1], "1", scale, dx, dy);
                 writer.AgentGroup.Random(lines, goals, scale, 40, "group1", "Walk");
             }
+
+            MapWriter.WriteMap("Map.txt", goals.ToList(), scale);
         }
 
         private static Goal[] _FindEnds(List<Goal> paths)
