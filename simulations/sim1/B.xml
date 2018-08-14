@@ -253,8 +253,12 @@
 		<Goal type="evAABB" id="1" min_x="13.8" min_y="-8.2" max_x="17" max_y="-5" weight="1.0" adjacent="" next="" />
 		<Goal type="evAABB" id="2" min_x="15.4" min_y="37.4" max_x="18.6" max_y="40.6" weight="1.0" adjacent="" next="" />
 	</GoalSet>
-	<State name="Walk" final="0">
+	<State name="UnknownWalk" final="0">
 		<GoalSelector type="unknown_path" goal_set="0" />
+		<VelComponent type="road_map" file_name="Map.txt" />
+	</State>
+	<State name="KnownWalk" final="0">
+		<GoalSelector type="known_path" goal_set="0" />
 		<VelComponent type="road_map" file_name="Map.txt" />
 	</State>
 	<State name="Out" final="0">
@@ -265,16 +269,25 @@
 		<GoalSelector type="nearest" goal_set="1" />
 		<VelComponent type="goal" />
 	</State>
-	<Transition from="Walk" to="Out">
+	<Transition from="UnknownWalk" to="Out">
 		<Condition type="AABB" inside="1" min_x="14.6" min_y="-1.4" max_x="16.2" max_y="0.2" />
 	</Transition>
-	<Transition from="Walk" to="Out">
+	<Transition from="KnownWalk" to="Out">
+		<Condition type="AABB" inside="1" min_x="14.6" min_y="-1.4" max_x="16.2" max_y="0.2" />
+	</Transition>
+	<Transition from="UnknownWalk" to="Out">
+		<Condition type="AABB" inside="1" min_x="16.2" min_y="32.2" max_x="17.8" max_y="33.8" />
+	</Transition>
+	<Transition from="KnownWalk" to="Out">
 		<Condition type="AABB" inside="1" min_x="16.2" min_y="32.2" max_x="17.8" max_y="33.8" />
 	</Transition>
 	<Transition from="Out" to="GoAway">
 		<Condition type="auto" />
 	</Transition>
-	<Transition from="Walk" to="Walk">
+	<Transition from="UnknownWalk" to="UnknownWalk">
+		<Condition type="goal_reached" />
+	</Transition>
+	<Transition from="KnownWalk" to="KnownWalk">
 		<Condition type="goal_reached" />
 	</Transition>
 </BFSM>

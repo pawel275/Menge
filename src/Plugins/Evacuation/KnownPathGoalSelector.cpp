@@ -15,11 +15,11 @@ namespace Evacuation
 	{
 		Agent * a = (Agent*)agent;
 
-		if (!a->_lastGoal)
+		if (!a->_last_goal)
 		{
-			return a->_lastGoal = (EvacuationAABBGoal*)_goalSet->getGoalByID(a->_start_goal_id);
+			return a->_last_goal = (EvacuationAABBGoal*)_goalSet->getGoalByID(a->_start_goal_id);
 		}
 
-		return a->_lastGoal = (EvacuationAABBGoal*)_goalSet->getGoalByID(a->_lastGoal->_next);
+		return a->_last_goal = (EvacuationAABBGoal*)_goalSet->getGoalByID(a->_last_goal->_next);
 	}
 }

@@ -6,6 +6,10 @@
 		<Common max_angle_vel="360" max_neighbors="10" obstacleSet="1" neighbor_dist="5" r="0.19" class="1" pref_speed="1.04" max_speed="2" max_accel="5" />
 		<ORCA tau="3.0" tauObst="0.15" />
 	</AgentProfile>
+	<AgentProfile name="group2">
+		<Common max_angle_vel="360" max_neighbors="10" obstacleSet="1" neighbor_dist="5" r="0.19" class="2" pref_speed="1.04" max_speed="2" max_accel="5" />
+		<ORCA tau="3.0" tauObst="0.15" />
+	</AgentProfile>
 	<ObstacleSet type="explicit" class="1">
 		<Obstacle closed="1">
 			<Vertex p_x="0.2" p_y="0.2" />
@@ -730,48 +734,59 @@
 	</ObstacleSet>
 	<AgentGroup>
 		<ProfileSelector type="const" name="group1" />
-		<StateSelector type="const" name="Walk" />
+		<StateSelector type="const" name="UnknownWalk" />
 		<Generator type="evacuation">
-			<Agent p_x="24.206" p_y="25.838" goal="175" />
-			<Agent p_x="12.155" p_y="4.968" goal="87" />
-			<Agent p_x="1.741" p_y="6.122" goal="269" />
-			<Agent p_x="22.896" p_y="12.878" goal="42" />
-			<Agent p_x="6.419" p_y="15.703" goal="142" />
-			<Agent p_x="10.173" p_y="21.689" goal="219" />
-			<Agent p_x="17.23" p_y="4.003" goal="162" />
-			<Agent p_x="8.599" p_y="18.854" goal="224" />
-			<Agent p_x="27.443" p_y="16.773" goal="199" />
-			<Agent p_x="19.98" p_y="14.716" goal="56" />
-			<Agent p_x="17.975" p_y="2.758" goal="93" />
-			<Agent p_x="21.313" p_y="6.149" goal="48" />
-			<Agent p_x="8.635" p_y="25.276" goal="230" />
-			<Agent p_x="6.035" p_y="18.611" goal="73" />
-			<Agent p_x="9.378" p_y="16.072" goal="137" />
-			<Agent p_x="31.837" p_y="26.822" goal="110" />
-			<Agent p_x="17.073" p_y="15.915" goal="151" />
-			<Agent p_x="13.762" p_y="9.853" goal="89" />
-			<Agent p_x="6.413" p_y="18.934" goal="73" />
-			<Agent p_x="22.599" p_y="17.857" goal="58" />
-			<Agent p_x="9.071" p_y="16.938" goal="68" />
-			<Agent p_x="4.109" p_y="27.167" goal="254" />
-			<Agent p_x="14.693" p_y="4.846" goal="91" />
-			<Agent p_x="23.799" p_y="6.171" goal="100" />
-			<Agent p_x="28.89" p_y="11.072" goal="188" />
-			<Agent p_x="23.529" p_y="6.331" goal="100" />
-			<Agent p_x="13.13" p_y="17.552" goal="65" />
-			<Agent p_x="9.239" p_y="21.649" goal="26" />
-			<Agent p_x="4.725" p_y="6.206" goal="11" />
-			<Agent p_x="28.533" p_y="8.666" goal="192" />
-			<Agent p_x="0.287" p_y="4.485" goal="8" />
-			<Agent p_x="3.701" p_y="22.547" goal="71" />
-			<Agent p_x="16.065" p_y="15.551" goal="157" />
-			<Agent p_x="4.816" p_y="1.515" goal="6" />
-			<Agent p_x="22.442" p_y="30.946" goal="118" />
-			<Agent p_x="12.641" p_y="8.708" goal="88" />
-			<Agent p_x="26.375" p_y="2.323" goal="103" />
-			<Agent p_x="5.846" p_y="1.237" goal="6" />
-			<Agent p_x="30.849" p_y="26.346" goal="110" />
-			<Agent p_x="23.656" p_y="3.989" goal="99" />
+			<Agent p_x="1.738" p_y="12.728" goal="14" />
+			<Agent p_x="2.065" p_y="23.438" goal="24" />
+			<Agent p_x="14.829" p_y="22.708" goal="31" />
+			<Agent p_x="5.301" p_y="20.347" goal="134" />
+			<Agent p_x="29.814" p_y="14.93" goal="185" />
+			<Agent p_x="9.429" p_y="32.142" goal="245" />
+			<Agent p_x="14.294" p_y="7.065" goal="90" />
+			<Agent p_x="8.773" p_y="24.883" goal="230" />
+			<Agent p_x="10.669" p_y="3.514" goal="86" />
+			<Agent p_x="19.427" p_y="27.908" goal="120" />
+			<Agent p_x="3.28" p_y="1.03" goal="7" />
+			<Agent p_x="6.215" p_y="8.416" goal="78" />
+			<Agent p_x="7.293" p_y="8.843" goal="78" />
+			<Agent p_x="6.836" p_y="23.81" goal="25" />
+			<Agent p_x="10.842" p_y="10.282" goal="81" />
+			<Agent p_x="5.564" p_y="31.286" goal="250" />
+			<Agent p_x="11.321" p_y="5.061" goal="85" />
+			<Agent p_x="23.47" p_y="3.995" goal="99" />
+			<Agent p_x="28.882" p_y="6.057" goal="206" />
+			<Agent p_x="5.351" p_y="23.203" goal="24" />
+			<Agent p_x="27.513" p_y="1.837" goal="106" />
+			<Agent p_x="21.349" p_y="19.374" goal="58" />
+			<Agent p_x="9.516" p_y="11.607" goal="80" />
+			<Agent p_x="8.501" p_y="13.552" goal="136" />
+			<Agent p_x="15.432" p_y="22.328" goal="32" />
+			<Agent p_x="0.844" p_y="19.939" goal="21" />
+			<Agent p_x="27.166" p_y="8.803" goal="191" />
+			<Agent p_x="16.145" p_y="0.909" goal="2" />
+			<Agent p_x="6.713" p_y="25.849" goal="255" />
+			<Agent p_x="16.346" p_y="6.185" goal="49" />
+			<Agent p_x="16.071" p_y="13.691" goal="158" />
+			<Agent p_x="9.705" p_y="19.732" goal="26" />
+			<Agent p_x="9.566" p_y="10.343" goal="79" />
+			<Agent p_x="21.021" p_y="9.432" goal="47" />
+			<Agent p_x="15.795" p_y="4.978" goal="91" />
+			<Agent p_x="28.2" p_y="4.812" goal="205" />
+			<Agent p_x="30.363" p_y="28.424" goal="111" />
+			<Agent p_x="0.596" p_y="1.644" goal="7" />
+			<Agent p_x="11.881" p_y="19.041" goal="63" />
+			<Agent p_x="31.1" p_y="27.885" goal="110" />
+		</Generator>
+	</AgentGroup>
+	<AgentGroup>
+		<ProfileSelector type="const" name="group2" />
+		<StateSelector type="const" name="KnownWalk" />
+		<Generator type="evacuation">
+			<Agent p_x="9.206" p_y="28.728" goal="258" />
+			<Agent p_x="22.979" p_y="31.333" goal="126" />
+			<Agent p_x="16.022" p_y="22" goal="32" />
+			<Agent p_x="2.516" p_y="6.863" goal="270" />
+			<Agent p_x="8.277" p_y="24.311" goal="230" />
 		</Generator>
 	</AgentGroup>
 </Experiment>

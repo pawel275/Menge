@@ -42,6 +42,9 @@
     <ClInclude Include="..\..\..\src\Plugins\Evacuation\AgentGenerator.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="..\..\..\src\Plugins\Evacuation\FollowCondition.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\..\..\src\Plugins\Evacuation\Evacuation.cpp">
@@ -60,6 +63,9 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="..\..\..\src\Plugins\Evacuation\AgentGenerator.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\Plugins\Evacuation\FollowCondition.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
