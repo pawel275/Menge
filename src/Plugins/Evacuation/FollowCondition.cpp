@@ -1,6 +1,8 @@
 #include "FollowCondition.h"
 #include "Agent.h"
 #include "MengeCore\Core.h"
+#include "MengeCore\Agents\SimulatorInterface.h"
+
 namespace Evacuation {
 	FollowCondition::FollowCondition() : Condition(), _group(0.f)
 	{
@@ -13,13 +15,19 @@ namespace Evacuation {
 
 	bool FollowCondition::conditionMet(Agents::BaseAgent * agent, const Goal * goal)
 	{
+		if (agent->_class == _group)
+		{
+			return true;
+		}
+
 		for each (Agents::NearAgent nearAgt in agent->_nearAgents)
 		{
-			if (nearAgt.agent->_class == _group)
+			if (nearAgt.agent->_class == _group && SIMULATOR->queryVisibility(agent->_pos, nearAgt.agent->_pos))
 			{
 				return true;
 			}
 		}
+
 		return false;
 	}
 
@@ -30,7 +38,7 @@ namespace Evacuation {
 
 	FollowCondFactory::FollowCondFactory()
 	{
-		_groupID = _attrSet.addFloatAttribute("group", false, 0.f);
+		_groupID = _attrSet.addSizeTAttribute("group", false, 0.f);
 	}
 
 	bool FollowCondFactory::setFromXML(Condition * condition, TiXmlElement * node, const std::string & behaveFldr) const

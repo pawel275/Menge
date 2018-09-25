@@ -19,7 +19,7 @@ namespace Evacuation {
 
 		virtual Condition * copy();
 
-		void setGroup(size_t dist) { _group = dist * dist; }
+		void setGroup(size_t group) { _group = group; }
 
 	protected:
 

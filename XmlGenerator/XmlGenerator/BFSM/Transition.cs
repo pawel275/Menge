@@ -34,6 +34,31 @@ namespace XmlGenerator.BFSM
             });
         }
 
+        public void Follow(string from, string to, int group)
+        {
+            _WriteTransition(from, to, () =>
+            {
+                xml.WriteStartElement("Condition");
+                xml.WriteAttributeString("type", "follow");
+                xml.WriteAttributeString("group", Utils.Str(group));
+                xml.WriteEndElement();
+            });
+        }
+
+        public void NotFollow(string from, string to, int group)
+        {
+            _WriteTransition(from, to, () =>
+            {
+                xml.WriteStartElement("Condition");
+                xml.WriteAttributeString("type", "not");
+                xml.WriteStartElement("Condition");
+                xml.WriteAttributeString("type", "follow");
+                xml.WriteAttributeString("group", Utils.Str(group));
+                xml.WriteEndElement();
+                xml.WriteEndElement();
+            });
+        }
+
         private void _WriteTransition(string from, string to, Action body)
         {
             xml.WriteStartElement("Transition");

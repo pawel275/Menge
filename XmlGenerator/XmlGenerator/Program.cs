@@ -50,6 +50,9 @@ namespace XmlGenerator
                 writer.Transition.Simple("Out", "GoAway", "auto");
                 writer.Transition.Simple("UnknownWalk", "UnknownWalk", "goal_reached");
                 writer.Transition.Simple("KnownWalk", "KnownWalk", "goal_reached");
+                writer.Transition.Follow("UnknownWalk", "KnownWalk", 2);
+                writer.Transition.NotFollow("KnownWalk", "UnknownWalk", 2);
+
             }
 
             using (var writer = new SceneWriter("S.xml"))

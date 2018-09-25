@@ -290,4 +290,12 @@
 	<Transition from="KnownWalk" to="KnownWalk">
 		<Condition type="goal_reached" />
 	</Transition>
+	<Transition from="UnknownWalk" to="KnownWalk">
+		<Condition type="follow" group="2" />
+	</Transition>
+	<Transition from="KnownWalk" to="UnknownWalk">
+		<Condition type="not">
+			<Condition type="follow" group="2" />
+		</Condition>
+	</Transition>
 </BFSM>
