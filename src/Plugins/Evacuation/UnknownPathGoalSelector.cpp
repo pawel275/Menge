@@ -5,6 +5,7 @@
 #include "GoalFactory.h"
 #include <stdlib.h>
 #include <time.h>
+#include <unordered_set>
 #include "Menge/MengeCore/Math/Vector2.h"
 
 using Menge::Math::Vector2;
@@ -17,37 +18,38 @@ namespace Evacuation
 		
 		Agent * a = (Agent*)agent;
 
-		if (!a->_last_goal)
+		if (!a->_current_goal)
 		{
-			a->_last_goal = (EvacuationAABBGoal*)_goalSet->getGoalByID(a->_start_goal_id);
+			a->_current_goal = (EvacuationAABBGoal*)_goalSet->getGoalByID(a->_start_goal_id);
 		}
 		else
 		{
-			if (a->_last_goal->_adjacent.size() == 1)
-			{
-				a->_dead_ends.insert(a->_last_goal->getID());
-			}
-
 			std::vector<size_t> choices;
 
-			for (std::vector<size_t>::iterator it = a->_last_goal->_adjacent.begin(); it != a->_last_goal->_adjacent.end(); ++it)
+			for each (size_t goal in a->_current_goal->_adjacent)
 			{
-				if (a->_dead_ends.find(*it) == a->_dead_ends.end() && (a->_second_last_goal ? *it != a->_second_last_goal->getID() : true)) 
+				// goal is not a dead end && goal != last goal
+				if (a->_dead_ends.find(goal) == a->_dead_ends.end() && (a->_last_goal ? goal != a->_last_goal->getID() : true)) 
 				{
-					choices.push_back(*it);
+					choices.push_back(goal);
 				}
 			}
 
 			if (choices.empty()) 
 			{
-				choices.push_back(a->_second_last_goal->getID());
-				a->_dead_ends.insert(a->_last_goal->getID());
+				choices.push_back(a->_last_goal->getID());
+				a->_dead_ends.insert(a->_current_goal->getID());
+			}
+			// only 1 choice && last goal is a dead end
+			else if (a->_last_goal && choices.size() == 1 && a->_dead_ends.count(a->_last_goal->getID()))
+			{
+				a->_dead_ends.insert(a->_current_goal->getID());
 			}
 
-			a->_second_last_goal = a->_last_goal;
- 			a->_last_goal = (EvacuationAABBGoal*)_goalSet->getGoalByID(choices[rand() % choices.size()]);
+			a->_last_goal = a->_current_goal;
+ 			a->_current_goal = (EvacuationAABBGoal*)_goalSet->getGoalByID(choices[rand() % choices.size()]);
 		}
 
-		return a->_last_goal;
+		return a->_current_goal;
 	}
 }
