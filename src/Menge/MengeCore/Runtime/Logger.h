@@ -169,12 +169,12 @@ namespace Menge {
 		/*!
 		 *	@brief		Writes the html header information to the given file.
 		 */
-		void writeHeader();
+		virtual void writeHeader();
 
 		/*!
 		 *	@brief		Writes the html tail information to the given file.
 		 */
-		void writeTail();
+		virtual void writeTail();
 
 		/*!
 		 *	@brief		Process text.

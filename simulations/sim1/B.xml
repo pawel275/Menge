@@ -264,6 +264,7 @@
 	<State name="Out" final="0">
 		<GoalSelector type="identity" />
 		<VelComponent type="goal" />
+		<Action type="log" text="out log" />
 	</State>
 	<State name="GoAway" final="1">
 		<GoalSelector type="nearest" goal_set="1" />

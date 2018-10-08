@@ -27,6 +27,8 @@
     <ClInclude Include="..\..\..\src\Plugins\Evacuation\GoalFactory.h" />
     <ClInclude Include="..\..\..\src\Plugins\Evacuation\GoalRenderer.h" />
     <ClInclude Include="..\..\..\src\Plugins\Evacuation\KnownPathGoalSelector.h" />
+    <ClInclude Include="..\..\..\src\Plugins\Evacuation\LogAction.h" />
+    <ClInclude Include="..\..\..\src\Plugins\Evacuation\SimLogger.h" />
     <ClInclude Include="..\..\..\src\Plugins\Evacuation\Simulator.h" />
     <ClInclude Include="..\..\..\src\Plugins\Evacuation\UnknownPathGoalSelector.h" />
   </ItemGroup>
@@ -37,6 +39,8 @@
     <ClCompile Include="..\..\..\src\Plugins\Evacuation\FollowCondition.cpp" />
     <ClCompile Include="..\..\..\src\Plugins\Evacuation\GoalFactory.cpp" />
     <ClCompile Include="..\..\..\src\Plugins\Evacuation\KnownPathGoalSelector.cpp" />
+    <ClCompile Include="..\..\..\src\Plugins\Evacuation\LogAction.cpp" />
+    <ClCompile Include="..\..\..\src\Plugins\Evacuation\SimLogger.cpp" />
     <ClCompile Include="..\..\..\src\Plugins\Evacuation\UnknownPathGoalSelector.cpp" />
   </ItemGroup>
   <PropertyGroup Label="Globals">

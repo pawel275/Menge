@@ -45,6 +45,12 @@
     <ClInclude Include="..\..\..\src\Plugins\Evacuation\FollowCondition.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="..\..\..\src\Plugins\Evacuation\LogAction.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\Plugins\Evacuation\SimLogger.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\..\..\src\Plugins\Evacuation\Evacuation.cpp">
@@ -66,6 +72,12 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="..\..\..\src\Plugins\Evacuation\FollowCondition.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\Plugins\Evacuation\LogAction.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\Plugins\Evacuation\SimLogger.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
