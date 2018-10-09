@@ -1,11 +1,31 @@
 #include "LogAction.h"
 #include "Simulator.h"
+#include "Agent.h"
+#include "MengeCore\Agents\SimulatorInterface.h"
+
+inline void findAndReplace(std::string & source, const std::string & find,
+	const std::string & replace)
+{
+	size_t fLen = find.size();
+	size_t rLen = replace.size();
+	for (size_t pos = 0;
+		(pos = source.find(find, pos)) != std::string::npos;
+		pos += rLen) {
+		source.replace(pos, fLen, replace);
+	}
+}
 
 bool Evacuation::LogActionFactory::_is_logger_file_set = false;
 
 void Evacuation::LogAction::onEnter(Menge::Agents::BaseAgent * agent)
 {
-	SIM_LOGGER << SimLogger::INFO_MSG << _text;
+	Agent * agt = dynamic_cast<Agent *>(agent);
+	
+	std::string processed_text(_text);
+	findAndReplace(processed_text, "{class}", std::to_string(agt->_class));
+	findAndReplace(processed_text, "{time}", std::to_string(Menge::SIMULATOR->getGlobalTime()));
+
+	SIM_LOGGER << SimLogger::INFO_MSG << processed_text;
 }
 
 void Evacuation::LogAction::setText(std::string text)
