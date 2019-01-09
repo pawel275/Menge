@@ -6,8 +6,15 @@
 
 namespace Evacuation 
 {
+	Menge::Logger simLogger;
+
 	class Simulator : public Menge::Agents::SimulatorBase<Agent>
 	{
+	public:
+		Simulator()
+		{
+			simLogger.setFile("simLog");
+		}
 	};
 }
 

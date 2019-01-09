@@ -11,6 +11,7 @@
 #include "GoalRenderer.h"
 #include "AgentGenerator.h"
 #include "FollowCondition.h"
+#include "LogAction.h"
 #include "MengeCore/PluginEngine/CorePluginEngine.h"
 #include "MengeVis/PluginEngine/VisPluginEngine.h"
 
@@ -46,6 +47,7 @@ extern "C" {
 		engine->registerGoalSelectorFactory(new Evacuation::KnownPathGoalSelectorFactory());
 		engine->registerAgentGeneratorFactory(new Evacuation::AgentGeneratorFactory());
 		engine->registerConditionFactory(new Evacuation::FollowCondFactory());
+		engine->registerActionFactory(new Evacuation::LogActionFactory());
 	}
 
 	EVACUATION_API void registerVisPlugin(MengeVis::PluginEngine::VisPluginEngine * engine) {

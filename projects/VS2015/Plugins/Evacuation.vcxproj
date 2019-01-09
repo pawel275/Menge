@@ -29,6 +29,7 @@
     <ClInclude Include="..\..\..\src\Plugins\Evacuation\KnownPathGoalSelector.h" />
     <ClInclude Include="..\..\..\src\Plugins\Evacuation\Simulator.h" />
     <ClInclude Include="..\..\..\src\Plugins\Evacuation\UnknownPathGoalSelector.h" />
+    <ClInclude Include="LogAction.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\..\..\src\Plugins\Evacuation\AgentGenerator.cpp" />
@@ -38,6 +39,7 @@
     <ClCompile Include="..\..\..\src\Plugins\Evacuation\GoalFactory.cpp" />
     <ClCompile Include="..\..\..\src\Plugins\Evacuation\KnownPathGoalSelector.cpp" />
     <ClCompile Include="..\..\..\src\Plugins\Evacuation\UnknownPathGoalSelector.cpp" />
+    <ClCompile Include="LogAction.cpp" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <ProjectGuid>{D7EC89BC-5194-4659-9A81-1E34CF9CF445}</ProjectGuid>

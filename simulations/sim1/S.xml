@@ -778,7 +778,7 @@
 			<Agent p_x="31.1" p_y="27.885" goal="110" />
 		</Generator>
 	</AgentGroup>
-	<AgentGroup>
+	<!--<AgentGroup>
 		<ProfileSelector type="const" name="group2" />
 		<StateSelector type="const" name="KnownWalk" />
 		<Generator type="evacuation">
@@ -788,5 +788,5 @@
 			<Agent p_x="2.516" p_y="6.863" goal="270" />
 			<Agent p_x="8.277" p_y="24.311" goal="230" />
 		</Generator>
-	</AgentGroup>
+	</AgentGroup>-->
 </Experiment>
